@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Ermes-jvm-1.0-build001">
+    <output-path>$PROJECT_DIR$/build/libs</output-path>
+    <root id="archive" name="Ermes-jvm-1.0-build001.jar">
+      <element id="module-output" name="studio.forface.ermes.Ermes.jvmMain" />
+    </root>
+  </artifact>
+</component>
