@@ -64,26 +64,33 @@ buildscript {
         versionCode: getVersionCode()
     ]
 
-    repositories {
+    ext.repos = {
         jcenter()
         mavenCentral()
+        maven { url "https://kotlin.bintray.com/kotlinx" }
+        maven { url 'https://dl.bintray.com/jetbrains/kotlin-native-dependencies' }
+    }
+    
+    repositories repos
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$Versions.kotlin"
+        classpath "org.jetbrains.kotlin:kotlin-serialization:$Versions.kotlin"
     }
 }
 
 plugins {
     id 'kotlin-multiplatform' version '1.3.11'
 }
+apply plugin: 'kotlinx-serialization'
 
-repositories {
-    jcenter()
-    mavenCentral()
-}
+repositories repos
 
 kotlin {
     targets {
+        // fromPreset(presets.android, 'android') // Disabled due to missing metadata
         fromPreset(presets.iosX64, 'iosX64')
-        fromPreset(presets.iosArm32, 'iosArm32')
-        fromPreset(presets.iosArm64, 'iosArm64')
+        //fromPreset(presets.iosArm32, 'iosArm32') // Disabled due to Ktor missing metadata
+        //fromPreset(presets.iosArm64, 'iosArm64') // Disabled due to Ktor missing metadata
         fromPreset(presets.macosX64, 'macosX64')
         fromPreset(presets.linuxX64, 'linuxX64')
         fromPreset(presets.mingwX64, 'mingwX64')
@@ -160,6 +167,11 @@ dependencies {
     
     jvmTestImplementation Libs.test_jdk
     jvmTestImplementation Libs.test_jdk_junit
+    
+    /* Native */
+    nativeMainImplementation Libs.coroutines_native
+    nativeMainImplementation Libs.serialization_native
+    nativeMainImplementation Libs.ktor_native
 }
 
 // Publishing

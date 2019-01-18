@@ -9,7 +9,7 @@ actual object ServiceBuilder {
      *
      * @return an instance of [S]
      */
-    inline fun <reified S> createService() : S {
+    actual inline fun <reified S> createService() : S {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 }

@@ -2,15 +2,8 @@
 <module version="4">
   <component name="FacetManager">
     <facet type="kotlin-language" name="Kotlin">
-      <configuration version="3" platform="Native " useProjectSettings="false" isTestModule="true" externalProjectId="Ermes">
-        <sourceSets>
-          <sourceSet>studio.forface.ermes.Ermes.iosArm64Main</sourceSet>
-          <sourceSet>studio.forface.ermes.Ermes.commonTest</sourceSet>
-          <sourceSet>studio.forface.ermes.Ermes.commonMain</sourceSet>
-          <sourceSet>studio.forface.ermes.Ermes.nativeTest</sourceSet>
-          <sourceSet>studio.forface.ermes.Ermes.nativeMain</sourceSet>
-        </sourceSets>
-        <newMppModelJpsModuleKind>COMPILATION_AND_SOURCE_SET_HOLDER</newMppModelJpsModuleKind>
+      <configuration version="3" platform="Common (experimental) " useProjectSettings="false" isTestModule="true" externalProjectId="Ermes">
+        <newMppModelJpsModuleKind>SOURCE_SET_HOLDER</newMppModelJpsModuleKind>
         <compilerSettings />
         <compilerArguments>
           <option name="languageVersion" value="1.3" />
@@ -19,7 +12,9 @@
             <array />
           </option>
           <option name="pluginClasspaths">
-            <array />
+            <array>
+              <option value="$KOTLIN_BUNDLED$/lib/kotlinx-serialization-compiler-plugin.jar" />
+            </array>
           </option>
           <option name="multiPlatform" value="true" />
         </compilerArguments>
