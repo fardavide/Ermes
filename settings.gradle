@@ -10,4 +10,7 @@ pluginManagement {
 
 rootProject.name = 'Ermes'
 
+include ':ermes'
+include ':sample'
+
 enableFeaturePreview('GRADLE_METADATA')

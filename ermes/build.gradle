@@ -1,0 +1,149 @@
+apply plugin: 'kotlin-multiplatform'
+apply plugin: 'kotlinx-serialization'
+
+archivesBaseName = 'ermes'
+
+repositories repos
+
+kotlin {
+    targets {
+        // fromPreset(presets.android, 'android') // Disabled due to missing metadata
+        fromPreset(presets.iosX64, 'iosX64')
+        //fromPreset(presets.iosArm32, 'iosArm32') // Disabled due to Ktor missing metadata
+        //fromPreset(presets.iosArm64, 'iosArm64') // Disabled due to Ktor missing metadata
+        fromPreset(presets.macosX64, 'macosX64')
+        fromPreset(presets.linuxX64, 'linuxX64')
+        fromPreset(presets.mingwX64, 'mingwX64')
+        fromPreset(presets.jvm, 'jvm')
+        fromPreset(presets.js, 'js') {
+            compilations.main {
+                compileKotlinJs.kotlinOptions {
+                    languageVersion = "1.3"
+                    sourceMap = true
+                    metaInfo = true
+                    moduleKind = "umd"
+                }
+                compileTestKotlinJs.kotlinOptions {
+                    languageVersion = "1.3"
+                    moduleKind = "umd"
+                }
+            }
+        }
+    }
+    sourceSets {
+        nativeMain
+        nativeTest
+        //androidMain {
+        //    dependsOn jvmMain
+        //}
+        //androidTest {
+        //    dependsOn jvmTest
+        //}
+        configure([iosX64Main, iosArm32Main, iosArm64Main, macosX64Main, linuxX64Main, mingwX64Main]) {
+            dependsOn nativeMain
+        }
+        configure([iosX64Test, iosArm32Test, iosArm64Test, macosX64Test, linuxX64Test, mingwX64Test]) {
+            dependsOn nativeTest
+        }
+    }
+}
+
+dependencies {
+
+    /* Common */
+    commonMainImplementation Libs.kotlin_common
+    commonMainImplementation Libs.coroutines_common
+    commonMainImplementation Libs.serialization_common
+    commonMainImplementation Libs.ktor_common
+
+    commonTestImplementation Libs.test_common
+    commonTestImplementation Libs.test_common_annotations
+
+    /* Android */
+    // androidMainImplementation Libs.kotlin_android
+    // androidMainImplementation Libs.coroutines_jdk
+    // androidMainImplementation Libs.coroutines_android
+    // androidMainImplementation Libs.serialization_jdk
+    // androidMainImplementation Libs.ktor_jdk
+    // androidMainImplementation Libs.ktor_jdk_apache
+
+    // androidTestImplementation Libs.test_jdk
+    // androidTestImplementation Libs.test_jdk_junit
+
+    /* Js */
+    jsMainImplementation Libs.kotlin_js
+    jsMainImplementation Libs.coroutines_js
+    jsMainImplementation Libs.serialization_js
+    jsMainImplementation Libs.ktor_js
+
+    jsTestImplementation Libs.test_js
+
+    /* Jvm */
+    jvmMainImplementation Libs.kotlin_jdk8
+    jvmMainImplementation Libs.coroutines_jdk8
+    jvmMainImplementation Libs.serialization_jdk
+    jvmMainImplementation Libs.ktor_jdk
+    jvmMainImplementation Libs.ktor_jdk_apache
+
+    jvmTestImplementation Libs.test_jdk
+    jvmTestImplementation Libs.test_jdk_junit
+
+    /* Native */
+    nativeMainImplementation Libs.coroutines_native
+    nativeMainImplementation Libs.serialization_native
+    nativeMainImplementation Libs.ktor_native
+}
+
+// Publishing
+group 'studio.forface.ermes'
+version versions.versionName
+apply plugin: 'maven-publish'
+
+def pomBaseData = {
+    licenses {
+        license {
+            name project.property("project.license.name")
+            url project.property("project.license.url")
+        }
+    }
+    scm {
+        url project.property("project.scm.url")
+    }
+}
+
+def generatePom = { pom ->
+    pom.withXml {
+        def root = it.asNode()
+        root.appendNode('name', project.name)
+        root.appendNode('description', project.property("project.description"))
+        root.appendNode('url', project.property("project.scm.url"))
+        root.children().last() + pomBaseData
+    }
+}
+
+ext.generatePom = generatePom
+
+def publishUser = rootProject.findProperty('BINTRAY_USER') ?: project.findProperty('bintrayUser') ?: System.getenv('BINTRAY_USER')
+def publishPassword = rootProject.findProperty('BINTRAY_KEY') ?: project.findProperty('bintrayApiKey') ?: System.getenv('BINTRAY_API_KEY')
+
+if (publishUser && publishPassword) {
+    publishing {
+        repositories {
+            maven {
+                credentials {
+                    username publishUser
+                    password publishPassword
+                }
+                url "https://api.bintray.com/maven/soywiz/soywiz/${project.property('project.package')}/"
+            }
+        }
+
+        configure(publications) {
+            generatePom(pom)
+        }
+    }
+}
+
+if (project.file('build.project.gradle').exists()) {
+    apply from: project.file('build.project.gradle')
+}

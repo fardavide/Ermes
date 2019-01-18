@@ -1,8 +1,6 @@
 <component name="ArtifactManager">
-  <artifact type="jar" name="Ermes-js-1.0-build001">
-    <output-path>$PROJECT_DIR$/build/libs</output-path>
-    <root id="archive" name="Ermes-js-1.0-build001.jar">
-      <element id="module-output" name="studio.forface.ermes.Ermes.jsMain" />
-    </root>
+  <artifact type="jar" name="ermes-js-1.0-build001">
+    <output-path>$PROJECT_DIR$/ermes/build/libs</output-path>
+    <root id="archive" name="ermes-js-1.0-build001.jar" />
   </artifact>
 </component>

@@ -1,0 +1,16 @@
+apply plugin: 'org.jetbrains.kotlin.platform.jvm'
+
+archivesBaseName = 'sample'
+
+repositories repos
+
+
+// TODO work around for https://youtrack.jetbrains.com/issue/KT-27170
+configurations {
+    compileClasspath
+}
+
+dependencies {
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib'
+    implementation project(":ermes")
+}
