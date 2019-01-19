@@ -3,8 +3,9 @@
 object Versions {
     val kotlin =            "1.3.11"
     val coroutines =        "1.1.0"
-    val serialization =     "0.9.1"
     val ktor =              "1.1.1"
+    val mockk =             "1.9"
+    val serialization =     "0.9.1"
 }
 
 object Libs {
@@ -27,14 +28,19 @@ object Libs {
     val coroutines_js =             "org.jetbrains.kotlinx:kotlinx-coroutines-core-js:${Versions.coroutines}"
     val coroutines_native =         "org.jetbrains.kotlinx:kotlinx-coroutines-core-native:${Versions.coroutines}"
 
-    val serialization_common =      "org.jetbrains.kotlinx:kotlinx-serialization-runtime-common:${Versions.serialization}"
-    val serialization_jdk =         "org.jetbrains.kotlinx:kotlinx-serialization-runtime:${Versions.serialization}"
-    val serialization_js =          "org.jetbrains.kotlinx:kotlinx-serialization-runtime-js:${Versions.serialization}"
-    val serialization_native =      "org.jetbrains.kotlinx:kotlinx-serialization-runtime-native:${Versions.serialization}"
-
     val ktor_common =               "io.ktor:ktor-client-core:${Versions.ktor}"
     val ktor_jdk =                  "io.ktor:ktor-client-core-jvm:${Versions.ktor}"
     val ktor_jdk_apache =           "io.ktor:ktor-client-apache:${Versions.ktor}"
     val ktor_js =                   "io.ktor:ktor-client-core-js:${Versions.ktor}"
     val ktor_native =               "io.ktor:ktor-client-core-native:${Versions.ktor}"
+
+    val mockk_common =              "io.mockk:mockk-common:${Versions.mockk}"
+    val mockk_jdk =                 "io.mockk:mockk:${Versions.mockk}"
+    val mockk_js =                  "io.mockk:mockk-js:${Versions.mockk}"
+    val mockk_native =              "io.mockk:mockk-native:${Versions.mockk}"
+
+    val serialization_common =      "org.jetbrains.kotlinx:kotlinx-serialization-runtime-common:${Versions.serialization}"
+    val serialization_jdk =         "org.jetbrains.kotlinx:kotlinx-serialization-runtime:${Versions.serialization}"
+    val serialization_js =          "org.jetbrains.kotlinx:kotlinx-serialization-runtime-js:${Versions.serialization}"
+    val serialization_native =      "org.jetbrains.kotlinx:kotlinx-serialization-runtime-native:${Versions.serialization}"
 }

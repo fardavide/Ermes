@@ -1,4 +1,4 @@
-package studio.forface.ermes.servicebuilder
+package studio.forface.ermes.entities
 
 import studio.forface.ermes.exceptions.InvalidUrlException
 
@@ -6,7 +6,7 @@ import studio.forface.ermes.exceptions.InvalidUrlException
  * @author Davide Giuseppe Farella.
  * A custom lightweight class for an Url.
  */
-class Url( private var s: String ) {
+internal class Url( private var s: String ) {
 
     /**
      * A [Boolean] for keep track whether a query is present, for choose if a new one should be concatenated with
@@ -34,6 +34,16 @@ class Url( private var s: String ) {
         plusAssign("$conjunction$name=$value" )
     }
 
+    /** Append an [Endpoint] to the Url, if not null */
+    operator fun plus( endpoint: Endpoint? ) = apply {
+        endpoint?.let { plusAssign("/$it" ) }
+    }
+
+    /** @see String.plus */
+    private operator fun plusAssign( other: String ) {
+        s += other
+    }
+
     /**
      * Set a path value.
      *
@@ -46,31 +56,31 @@ class Url( private var s: String ) {
         s = s.replace( old, new )
     }
 
-    /** @see String.equals */
-    override fun equals( other: Any? ): Boolean {
-        return s == other
-    }
-
-    /** @see String.plus */
-    private operator fun plusAssign( other: String ) {
-        s += other
-    }
-
     /**
      * @return this [Url] if valid, else
      * @throws InvalidUrlException
      */
     internal fun validateOrThrow() : Url {
         when {
-            !s.startsWith("http" ) -> throw InvalidUrlException( "Url should start with 'http' or 'https''" )
+            !s.startsWith("http://" ) && !s.startsWith( "https://" ) ->
+                throw InvalidUrlException( "Url should start with 'http' or 'https''" )
             !s.contains('.' ) -> throw InvalidUrlException( "An Url should contain at least a dot ( '.' )" )
         }
         return this
     }
 
-    /** @see String */
-    override fun toString(): String = s
+    /** @see Any.equals */
+    override operator fun equals( other: Any? ): Boolean {
+        return when ( other ) {
+            is String -> s == other
+            is Url -> this.s == other.s
+            else -> false
+        }
+    }
 
     /** @see String.hashCode */
     override fun hashCode(): Int = s.hashCode()
+
+    /** @see String */
+    override fun toString(): String = s
 }

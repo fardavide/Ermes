@@ -53,11 +53,12 @@ dependencies {
     /* Common */
     commonMainImplementation Libs.kotlin_common
     commonMainImplementation Libs.coroutines_common
-    commonMainImplementation Libs.serialization_common
     commonMainImplementation Libs.ktor_common
+    commonMainImplementation Libs.serialization_common
 
     commonTestImplementation Libs.test_common
     commonTestImplementation Libs.test_common_annotations
+    commonTestImplementation Libs.mockk_common
 
     /* Android */
     // androidMainImplementation Libs.kotlin_android
@@ -73,25 +74,29 @@ dependencies {
     /* Js */
     jsMainImplementation Libs.kotlin_js
     jsMainImplementation Libs.coroutines_js
-    jsMainImplementation Libs.serialization_js
     jsMainImplementation Libs.ktor_js
+    jsMainImplementation Libs.serialization_js
 
     jsTestImplementation Libs.test_js
+    //jsTestImplementation Libs.mockk_js
 
     /* Jvm */
     jvmMainImplementation Libs.kotlin_jdk8
     jvmMainImplementation Libs.coroutines_jdk8
-    jvmMainImplementation Libs.serialization_jdk
     jvmMainImplementation Libs.ktor_jdk
     jvmMainImplementation Libs.ktor_jdk_apache
+    jvmMainImplementation Libs.serialization_jdk
 
     jvmTestImplementation Libs.test_jdk
     jvmTestImplementation Libs.test_jdk_junit
+    jvmTestImplementation Libs.mockk_jdk
 
     /* Native */
     nativeMainImplementation Libs.coroutines_native
-    nativeMainImplementation Libs.serialization_native
     nativeMainImplementation Libs.ktor_native
+    nativeMainImplementation Libs.serialization_native
+    
+    //nativeTestImplementation Libs.mockk_native
 }
 
 // Publishing

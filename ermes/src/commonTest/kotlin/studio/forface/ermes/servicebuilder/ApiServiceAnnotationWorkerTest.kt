@@ -6,10 +6,10 @@ import studio.forface.ermes.NoEndpointService
 import studio.forface.ermes.Service
 import studio.forface.ermes.TestApi
 import studio.forface.ermes.annotations.ApiService
+import studio.forface.ermes.entities.Endpoint
+import studio.forface.ermes.utils.EMPTY_STRING
 import studio.forface.ermes.utils.findAnnotation
-import kotlin.test.Test
-import kotlin.test.assertFalse
-import kotlin.test.assertTrue
+import kotlin.test.*
 
 /**
  * @author Davide Giuseppe Farella.
@@ -17,15 +17,15 @@ import kotlin.test.assertTrue
  */
 class ApiServiceAnnotationWorkerTest {
 
-    @Test // TODO name method
-    fun `testHasEndpoint serviceWithoutEndpoint returnFalse`() {
+    @Test
+    fun `endpoint serviceWithoutEndpoint returnNull`() {
         val worker = ApiServiceAnnotationWorker( NoEndpointService::class.findAnnotation<ApiService>()!! )
-        assertFalse( worker.testHasEndpoint )
+        assertNull( worker.endpoint )
     }
 
-    @Test // TODO name method
-    fun `testHasEndpoint serviceWithEndpoint returnTrue`() {
+    @Test
+    fun `endpoint serviceWithEndpoint returnNotNullEndpoint`() {
         val worker = ApiServiceAnnotationWorker( Service::class.findAnnotation<ApiService>()!! )
-        assertTrue( worker.testHasEndpoint )
+        assertNotNull( worker.endpoint )
     }
 }
