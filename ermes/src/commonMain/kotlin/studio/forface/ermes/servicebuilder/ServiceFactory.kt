@@ -1,16 +1,19 @@
 package studio.forface.ermes.servicebuilder
 
+import kotlinx.coroutines.Deferred
 import studio.forface.ermes.annotations.ApiService
 import studio.forface.ermes.api.ErmesApi
 import studio.forface.ermes.entities.Endpoint
 import studio.forface.ermes.entities.Url
 import studio.forface.ermes.exceptions.MissingAnnotationException
 import studio.forface.ermes.exceptions.MissingModifierException
+import studio.forface.ermes.exceptions.RequireDeferredException
 import studio.forface.ermes.utils.findAnnotation
 import kotlin.properties.ReadOnlyProperty
 import kotlin.reflect.KClass
 import kotlin.reflect.KFunction
 import kotlin.reflect.KProperty
+import kotlin.reflect.KTypeParameter
 
 /**
  * @author Davide Giuseppe Farella.
@@ -24,8 +27,11 @@ import kotlin.reflect.KProperty
  * @throws MissingAnnotationException
  * @see apiServiceAnnotationWorker
  *
- * @throws MissingModifierException
+ * @throws RequireDeferredException
  * @see serviceFunctions
+ *
+ * TODO @throws MissingModifierException
+ * TODO @see serviceFunctions
  */
 @PublishedApi
 internal class ServiceFactory<S : Any>( ermesApi: ErmesApi, private val serviceKlass: KClass<S> ) {
@@ -45,12 +51,17 @@ internal class ServiceFactory<S : Any>( ermesApi: ErmesApi, private val serviceK
 
     /**
      * All the declared [KFunction]s in [S], filtering [equals], [toString] and [hashCode]
-     * @throws MissingModifierException if a function is not annotated with 'suspend'.
+     * @throws RequireDeferredException if a function in [S] doesn't return a [Deferred]
+     *
+     * TODO @throws MissingModifierException if a function is not annotated with 'suspend'.
      */
-    val serviceFunctions = serviceKlass.members
+    private val serviceFunctions = serviceKlass.members
         .mapNotNull { it as? KFunction<*> }
         .filterNot { it.name == "equals" || it.name == "toString" || it.name == "hashCode" }
-        .also { it.forEach { f -> if ( !f.isSuspend ) throw MissingModifierException( "suspend" ) } }
+        .also { it.forEach { f ->
+            if ( f.returnType.classifier != Deferred::class ) throw RequireDeferredException( serviceKlass, f )
+        } }
+        //.also { it.forEach { f -> if ( !f.isSuspend ) throw MissingModifierException( "suspend" ) } }
 
 
     /** Create an implementation at runtime of the requested Service [S] */
@@ -58,12 +69,14 @@ internal class ServiceFactory<S : Any>( ermesApi: ErmesApi, private val serviceK
 
 
 
-        return makeProxy()
+        //return makeProxy()
+
+        TODO("Not Implemented" )
     }
 }
 
 /** Platform dependant creation of Proxy */
-internal expect inline fun <reified S : Any> ServiceFactory<S>.makeProxy() : S
+//internal expect inline fun <reified S : Any> ServiceFactory<S>.makeProxy() : S
 
 /**
  * Create a Service by property delegation
@@ -72,7 +85,7 @@ internal expect inline fun <reified S : Any> ServiceFactory<S>.makeProxy() : S
 inline fun <reified S : Any> ErmesApi.service() = object : ReadOnlyProperty<ErmesApi, S> {
 
     /** A lazy value for the Service [S] */
-    private val value: S by lazy { ServiceFactory(this@service, S::class )() }
+    private val value: S by lazy { this@service<S>() }
 
     /**
      * @see ReadOnlyProperty.getValue

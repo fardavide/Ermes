@@ -62,8 +62,11 @@ internal class Url( private var s: String ) {
      */
     internal fun validateOrThrow() : Url {
         when {
+            s.isBlank() -> throw InvalidUrlException( "No Url has been set" )
+
             !s.startsWith("http://" ) && !s.startsWith( "https://" ) ->
                 throw InvalidUrlException( "Url should start with 'http' or 'https''" )
+
             !s.contains('.' ) -> throw InvalidUrlException( "An Url should contain at least a dot ( '.' )" )
         }
         return this

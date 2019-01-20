@@ -74,7 +74,7 @@ dependencies {
     /* Js */
     jsMainImplementation Libs.kotlin_js
     jsMainImplementation Libs.coroutines_js
-    jsMainImplementation Libs.ktor_js
+    jsMainApi Libs.ktor_js
     jsMainImplementation Libs.serialization_js
 
     jsTestImplementation Libs.test_js
@@ -83,8 +83,8 @@ dependencies {
     /* Jvm */
     jvmMainImplementation Libs.kotlin_jdk8
     jvmMainImplementation Libs.coroutines_jdk8
-    jvmMainImplementation Libs.ktor_jdk
-    jvmMainImplementation Libs.ktor_jdk_apache
+    jvmMainApi Libs.ktor_jdk
+    jvmMainApi Libs.ktor_jdk_apache
     jvmMainImplementation Libs.serialization_jdk
 
     jvmTestImplementation Libs.test_jdk
@@ -93,7 +93,7 @@ dependencies {
 
     /* Native */
     nativeMainImplementation Libs.coroutines_native
-    nativeMainImplementation Libs.ktor_native
+    nativeMainApi Libs.ktor_native
     nativeMainImplementation Libs.serialization_native
     
     //nativeTestImplementation Libs.mockk_native

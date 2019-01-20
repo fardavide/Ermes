@@ -1,9 +1,18 @@
+@file:Suppress("FunctionName", "MemberVisibilityCanBePrivate")
+
 package studio.forface.ermes.api
 
 import io.ktor.client.HttpClient
+import io.ktor.client.HttpClientConfig
+import io.ktor.client.engine.HttpClientEngine
+import io.ktor.client.engine.HttpClientEngineConfig
+import io.ktor.client.engine.HttpClientEngineFactory
 import studio.forface.ermes.entities.Url
 import studio.forface.ermes.exceptions.InvalidUrlException
 import studio.forface.ermes.servicebuilder.ServiceFactory
+import studio.forface.ermes.servicebuilder.ServiceInstancesManager
+import studio.forface.ermes.servicebuilder.service
+import studio.forface.ermes.utils.EMPTY_STRING
 import kotlin.properties.ReadOnlyProperty
 
 /**
@@ -13,25 +22,58 @@ import kotlin.properties.ReadOnlyProperty
  * @throws InvalidUrlException if the [baseUrl] is not valid
  * @see Url.validateOrThrow
  */
-abstract class ErmesApi( baseUrl: String ) {
+open class ErmesApi(
+
+    /** The [String] representation of the base url */
+    baseUrl: String,
+
+    /** A [Boolean] representing whether the logging should be enabled */
+    open val logging: Boolean = false,
+
+    /** The [HttpClient] for the API */
+    open val client: HttpClient = HttpClient()
+) {
 
     /** An [Url] representing the base url for the API */
     internal val baseUrl = Url( baseUrl ).validateOrThrow()
 
-    /** The [HttpClient] for the API */
-    open val client = HttpClient()
+    /** An instance of [ServiceInstancesManager] for manage instances of Services */
+    @PublishedApi
+    @Suppress("LeakingThis") // TODO: normally that leak won't be a problem, since no one would have many instances of an Api, but a better dependencies management would be a good choice.
+    internal val instancesManager = ServiceInstancesManager(this )
 
-    /** A [Boolean] representing whether the logging should be enabled */
-    open val logging = false
+    /** @return the instance of the requested Service [S] */
+    inline operator fun <reified S: Any> invoke() = instancesManager<S>()
+}
 
-    /** An instance of [ServiceFactory] for create the Services */
-    // private val serviceBuilder = ServiceFactory()
 
-    /**
-     * A public reference to [serviceBuilder] for get it from an inline function *only* within a [ReadOnlyProperty]
-     * context, while keeping [serviceBuilder] itself private.
-     * @see ErmesApi.service
-     */
-    // @Suppress("unused")
-    // val ReadOnlyProperty<ErmesApi, *>.internalServiceBuilder get() = serviceBuilder
+/** A constructor of [ErmesApi] via [ErmesApiBuilder] ( DSL ) */
+fun ErmesApi( baseUrl: String = EMPTY_STRING, block: ErmesApiBuilder.() -> Unit ): ErmesApi =
+    ErmesApiBuilder( baseUrl ).apply( block ).build()
+
+
+/** A Builder for create [ErmesApi] via DSL */
+class ErmesApiBuilder internal constructor( /** @see ErmesApi.baseUrl */ var baseUrl: String ) {
+
+    /** @see ErmesApi.client */
+    var client = HttpClient()
+
+    /** @see ErmesApi.logging */
+    var logging = false
+
+    /** A function for set [client] through [HttpClient] APIs */
+    fun client( block: HttpClientConfig<*>.() -> Unit ) {
+        client = HttpClient( block )
+    }
+
+    /** A function for set [client] through [HttpClient] APIs */
+    fun <T : HttpClientEngineConfig> client(
+        engineFactory: HttpClientEngineFactory<T>,
+        block: HttpClientConfig<T>.() -> Unit = {}
+    ) {
+        client = HttpClient( engineFactory, block )
+    }
+
+    /** Create an instance of [ErmesApi] */
+    fun build() = ErmesApi( baseUrl, logging, client )
 }

@@ -11,6 +11,7 @@ configurations {
 }
 
 dependencies {
-    implementation 'org.jetbrains.kotlin:kotlin-stdlib'
+    implementation Libs.kotlin_jdk8
+    implementation Libs.coroutines_jdk8
     implementation project(":ermes")
 }

@@ -2,41 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e8b59a50-2d5e-4e09-92bc-d281e70fc93e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/entities/Endpoint.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/servicebuilder/ServiceFactory.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ermes/src/commonTest/kotlin/studio/forface/ermes/entities/UrlTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ermes/src/jvmMain/kotlin/studio/forface/ermes/servicebuilder/ServiceFactory.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ermes/src/nativeMain/kotlin/studio/forface/ermes/servicebuilder/Test.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/entities/FunctionIdentifier.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/servicebuilder/ServiceInstancesManager.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ermes/src/commonTest/kotlin/studio/forface/ermes/entities/FunctionIdentifierTest.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.7/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.7/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.7/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.7/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.7/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.7/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.7/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.7/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.7/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.7/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Ermes_js_1_0_build001.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/Ermes_js_1_0_build001.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Ermes_jvm_1_0_build001.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/Ermes_jvm_1_0_build001.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/ermes/studio.forface.ermes.ermes.iosX64Test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/ermes/studio.forface.ermes.ermes.iosX64Test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/ermes/studio.forface.ermes.ermes.jsMain.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/ermes/studio.forface.ermes.ermes.jsMain.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/ermes/studio.forface.ermes.ermes.jsTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/ermes/studio.forface.ermes.ermes.jsTest.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/ermes/studio.forface.ermes.ermes.jvmMain.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/ermes/studio.forface.ermes.ermes.jvmMain.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/ermes/studio.forface.ermes.ermes.jvmTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/ermes/studio.forface.ermes.ermes.jvmTest.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/ermes/studio.forface.ermes.ermes.linuxX64Test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/ermes/studio.forface.ermes.ermes.linuxX64Test.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/ermes/studio.forface.ermes.ermes.macosX64Test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/ermes/studio.forface.ermes.ermes.macosX64Test.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/ermes/studio.forface.ermes.ermes.mingwX64Test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/ermes/studio.forface.ermes.ermes.mingwX64Test.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/buildSrc/.gradle/4.7/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/buildSrc/.gradle/4.7/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/buildSrc/.gradle/4.7/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/buildSrc/.gradle/4.7/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/buildSrc/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/buildSrc/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/buildSrc/src/main/java/Dependencies.kt" beforeDir="false" afterPath="$PROJECT_DIR$/buildSrc/src/main/java/Dependencies.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ermes/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/ermes/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/api/ErmesApi.kt" beforeDir="false" afterPath="$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/api/ErmesApi.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/entities/Url.kt" beforeDir="false" afterPath="$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/entities/Url.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/exceptions/exceptions.kt" beforeDir="false" afterPath="$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/exceptions/exceptions.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/servicebuilder/ApiServiceAnnotationWorker.kt" beforeDir="false" afterPath="$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/servicebuilder/ApiServiceAnnotationWorker.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/servicebuilder/ServiceBuilder.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/servicebuilder/Url.kt" beforeDir="false" afterPath="$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/entities/Url.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ermes/src/commonTest/kotlin/studio/forface/ermes/servicebuilder/ApiServiceAnnotationWorkerTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/ermes/src/commonTest/kotlin/studio/forface/ermes/servicebuilder/ApiServiceAnnotationWorkerTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ermes/src/commonTest/kotlin/studio/forface/ermes/servicebuilder/ServiceBuilderTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/ermes/src/commonTest/kotlin/studio/forface/ermes/servicebuilder/ServiceFactoryTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/servicebuilder/ServiceFactory.kt" beforeDir="false" afterPath="$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/servicebuilder/ServiceFactory.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ermes/src/commonTest/kotlin/studio/forface/ermes/servicebuilder/ServiceFactoryTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/ermes/src/commonTest/kotlin/studio/forface/ermes/servicebuilder/ServiceFactoryTest.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ermes/src/commonTest/kotlin/studio/forface/ermes/test.kt" beforeDir="false" afterPath="$PROJECT_DIR$/ermes/src/commonTest/kotlin/studio/forface/ermes/test.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ermes/src/jvmMain/kotlin/studio/forface/ermes/servicebuilder/ServiceFactory.kt" beforeDir="false" afterPath="$PROJECT_DIR$/ermes/src/jvmMain/kotlin/studio/forface/ermes/servicebuilder/ServiceFactory.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sample/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/sample/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sample/src/main/kotlin/studio/forface/ermes/sample/SampleApi.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sample/src/main/kotlin/studio/forface/ermes/sample/SampleApi.kt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -73,14 +66,44 @@
     <splitter split-orientation="horizontal" split-proportion="0.5588915">
       <split-first>
         <leaf>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/api/ErmesApi.kt">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="202">
+                  <caret line="37" selection-start-line="37" selection-end-line="37" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/servicebuilder/ServiceFactory.kt">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="734">
-                  <caret line="48" column="7" lean-forward="true" selection-start-line="48" selection-start-column="7" selection-end-line="48" selection-end-column="7" />
+                <state relative-caret-position="1060">
+                  <caret line="53" column="88" selection-start-line="53" selection-start-column="88" selection-end-line="53" selection-end-column="88" />
                   <folding>
-                    <element signature="e#45#473#0" expanded="true" />
+                    <element signature="e#45#673#0" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/ermes/src/commonTest/kotlin/studio/forface/ermes/entities/FunctionIdentifierTest.kt">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="420">
+                  <caret line="20" selection-start-line="20" selection-end-line="20" />
+                  <folding>
+                    <element signature="e#71#158#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/entities/FunctionIdentifier.kt">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="378">
+                  <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
                 </state>
               </provider>
             </entry>
@@ -88,52 +111,27 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/ermes/src/jvmMain/kotlin/studio/forface/ermes/servicebuilder/ServiceFactory.kt">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="42">
-                  <caret line="2" column="43" lean-forward="true" selection-start-line="2" selection-start-column="43" selection-end-line="2" selection-end-column="43" />
+                <state relative-caret-position="210">
+                  <caret line="10" selection-start-line="10" selection-end-line="10" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/exceptions/exceptions.kt">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="294">
-                  <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
-                  <folding>
-                    <element signature="e#41#128#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/src.zip!/java/lang/reflect/Proxy.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="766">
-                  <caret line="738" column="16" lean-forward="true" selection-start-line="738" selection-start-column="16" selection-end-line="738" selection-end-column="16" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/ermes/src/commonTest/kotlin/studio/forface/ermes/test.kt">
+            <entry file="file://$PROJECT_DIR$/ermes/src/commonTest/kotlin/studio/forface/ermes/servicebuilder/ServiceFactoryTest.kt">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="567">
                   <caret line="27" column="27" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
                   <folding>
-                    <element signature="e#30#196#0" expanded="true" />
+                    <element signature="e#77#273#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.mockk/mockk-dsl/1.9/e450f6d06765535de0f1b37e95db9b5286e069e4/mockk-dsl-1.9-sources.jar!/io/mockk/API.kt">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="401">
-                  <caret line="2047" column="17" lean-forward="true" selection-start-line="2047" selection-start-column="17" selection-end-line="2047" selection-end-column="17" />
-                </state>
-              </provider>
+            <entry file="file://$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/annotations/methods.kt">
+              <provider selected="true" editor-type-id="text-editor" />
             </entry>
           </file>
         </leaf>
@@ -143,11 +141,29 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/sample/src/main/kotlin/studio/forface/ermes/sample/SampleApi.kt">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="144">
-                  <caret line="6" column="58" selection-start-line="6" selection-start-column="58" selection-end-line="6" selection-end-column="58" />
+                <state relative-caret-position="192">
+                  <caret line="8" selection-start-line="8" selection-end-line="8" />
                   <folding>
-                    <element signature="e#37#179#0" expanded="true" />
+                    <element signature="e#37#285#0" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/ermes/build.gradle">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="491">
+                  <caret line="73" column="12" selection-start-line="73" selection-start-column="12" selection-end-line="73" selection-end-column="12" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/sample/build.gradle">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="336">
+                  <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
                 </state>
               </provider>
             </entry>
@@ -186,20 +202,26 @@
         <option value="$PROJECT_DIR$/ermes/src/commonTest/kotlin/studio/forface/ermes/servicebuilder/ApiServiceAnnotationWorkerTest.kt" />
         <option value="$PROJECT_DIR$/ermes/src/commonTest/kotlin/studio/forface/ermes/entities/UrlTest.kt" />
         <option value="$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/entities/Endpoint.kt" />
-        <option value="$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/entities/Url.kt" />
-        <option value="$PROJECT_DIR$/sample/src/main/kotlin/studio/forface/ermes/sample/SampleApi.kt" />
-        <option value="$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/api/ErmesApi.kt" />
         <option value="$PROJECT_DIR$/buildSrc/src/main/java/Dependencies.kt" />
-        <option value="$PROJECT_DIR$/ermes/build.gradle" />
         <option value="$PROJECT_DIR$/ermes/src/commonTest/kotlin/studio/forface/ermes/servicebuilder/ServiceBuilderTest.kt" />
         <option value="$PROJECT_DIR$/ermes/src/nativeMain/kotlin/studio/forface/ermes/servicebuilder/Test.kt" />
         <option value="$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/servicebuilder/ServiceBuilder.kt" />
-        <option value="$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/exceptions/exceptions.kt" />
-        <option value="$PROJECT_DIR$/ermes/src/commonTest/kotlin/studio/forface/ermes/test.kt" />
         <option value="$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/servicebuilder/SuspendInvocationHandler.kt" />
         <option value="$PROJECT_DIR$/ermes/src/jvmMain/kotlin/studio/forface/ermes/servicebuilder/makeProxy.kt" />
         <option value="$PROJECT_DIR$/ermes/src/jvmMain/kotlin/studio/forface/ermes/servicebuilder/ServiceFactory.kt" />
+        <option value="$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/exceptions/exceptions.kt" />
+        <option value="$PROJECT_DIR$/ermes/src/commonTest/kotlin/studio/forface/ermes/test.kt" />
+        <option value="$PROJECT_DIR$/ermes/src/commonTest/kotlin/studio/forface/ermes/servicebuilder/ServiceFactoryTest.kt" />
+        <option value="$PROJECT_DIR$/sample/build.gradle" />
+        <option value="$PROJECT_DIR$/ermes/build.gradle" />
         <option value="$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/servicebuilder/ServiceFactory.kt" />
+        <option value="$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/servicebuilder/ServiceInstancesManager.kt" />
+        <option value="$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/api/ErmesApi.kt" />
+        <option value="$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/entities/Url.kt" />
+        <option value="$PROJECT_DIR$/sample/src/main/kotlin/studio/forface/ermes/sample/SampleApi.kt" />
+        <option value="$PROJECT_DIR$/ermes/src/commonTest/kotlin/studio/forface/ermes/entities/FunctionIdentifier.kt" />
+        <option value="$PROJECT_DIR$/ermes/src/commonTest/kotlin/studio/forface/ermes/entities/FunctionIdentifierTest.kt" />
+        <option value="$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/entities/FunctionIdentifier.kt" />
       </list>
     </option>
   </component>
@@ -265,6 +287,26 @@
               <item name="commonMain" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="kotlin" type="462c0819:PsiDirectoryNode" />
               <item name="ermes" type="462c0819:PsiDirectoryNode" />
+              <item name="annotations" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Ermes" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Ermes" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="ermes" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="commonMain" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
+              <item name="ermes" type="462c0819:PsiDirectoryNode" />
+              <item name="entities" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Ermes" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Ermes" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="ermes" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="commonMain" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
+              <item name="ermes" type="462c0819:PsiDirectoryNode" />
               <item name="exceptions" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -306,23 +348,19 @@
               <item name="Ermes" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="ermes" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="jvmMain" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="commonTest" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
+              <item name="ermes" type="462c0819:PsiDirectoryNode" />
+              <item name="entities" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Ermes" type="b2602c69:ProjectViewProjectNode" />
               <item name="Ermes" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="ermes" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="jvmMain" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="commonTest" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="kotlin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Ermes" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Ermes" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="ermes" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="jvmMain" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
+              <item name="ermes" type="462c0819:PsiDirectoryNode" />
               <item name="servicebuilder" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -330,6 +368,21 @@
               <item name="Ermes" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="ermes" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="jvmMain" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="Ermes" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Ermes" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="ermes" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="jvmMain" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Ermes" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Ermes" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="ermes" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="nativeMain" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
             <path>
@@ -339,6 +392,11 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="nativeMain" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="kotlin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Ermes" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Ermes" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="sample" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -349,7 +407,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547921651191" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547998677676" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/ermes/src/jvmTest/kotlin" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -381,13 +439,13 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.ServiceBuilderTest.test">
-    <configuration name="ApiServiceAnnotationWorkerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.FunctionIdentifierTest.fromKFunction createCorrectly">
+    <configuration name="FunctionIdentifierTest.fromKFunction createCorrectly" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;studio.forface.ermes.servicebuilder.ApiServiceAnnotationWorkerTest&quot;" />
+        <option name="scriptParameters" value="--tests &quot;studio.forface.ermes.entities.FunctionIdentifierTest.fromKFunction createCorrectly&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -402,12 +460,12 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="ServiceBuilderTest.test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ServiceFactoryTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;studio.forface.ermes.servicebuilder.ServiceBuilderTest.test&quot;" />
+        <option name="scriptParameters" value="--tests &quot;studio.forface.ermes.servicebuilder.ServiceFactoryTest&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -422,12 +480,12 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="UrlTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ServiceFactoryTest.onInit serviceFunctionDoesNotReturDeferred throwRequireDeferredException" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;studio.forface.ermes.entities.UrlTest&quot;" />
+        <option name="scriptParameters" value="--tests &quot;studio.forface.ermes.servicebuilder.ServiceFactoryTest.onInit serviceFunctionDoesNotReturDeferred throwRequireDeferredException&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -442,12 +500,12 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="UrlTest.plusEndpoint whenEndpointIsNotNull appendEndpointCorrectly" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ServiceFactoryTest.runCorrectly" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;studio.forface.ermes.entities.UrlTest.plusEndpoint whenEndpointIsNotNull appendEndpointCorrectly&quot;" />
+        <option name="scriptParameters" value="--tests &quot;studio.forface.ermes.servicebuilder.ServiceFactoryTest.runCorrectly&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -462,33 +520,26 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="UrlTest.validateOrThrow whenUrlIsInvalid throwInvalidUrlException" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;studio.forface.ermes.entities.UrlTest.validateOrThrow whenUrlIsInvalid throwInvalidUrlException&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":ermes:cleanJvmTest" />
-            <option value=":ermes:jvmTest" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
-      <method v="2" />
+    <configuration name="studio.forface.ermes.sample.SampleApiKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
+      <module name="Ermes.sample.main" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="studio.forface.ermes.sample.SampleApiKt" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.ServiceBuilderTest.test" />
-        <item itemvalue="Gradle.UrlTest" />
-        <item itemvalue="Gradle.UrlTest.plusEndpoint whenEndpointIsNotNull appendEndpointCorrectly" />
-        <item itemvalue="Gradle.ApiServiceAnnotationWorkerTest" />
-        <item itemvalue="Gradle.UrlTest.validateOrThrow whenUrlIsInvalid throwInvalidUrlException" />
+        <item itemvalue="Gradle.FunctionIdentifierTest.fromKFunction createCorrectly" />
+        <item itemvalue="Kotlin.studio.forface.ermes.sample.SampleApiKt" />
+        <item itemvalue="Gradle.ServiceFactoryTest" />
+        <item itemvalue="Gradle.ServiceFactoryTest.runCorrectly" />
+        <item itemvalue="Gradle.ServiceFactoryTest.onInit serviceFunctionDoesNotReturDeferred throwRequireDeferredException" />
       </list>
     </recent_temporary>
   </component>
@@ -502,44 +553,44 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1547822748701</updated>
-      <workItem from="1547822750072" duration="24589000" />
+      <workItem from="1547822750072" duration="41393000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="UrlTest_plusEndpoint_whenEndpointIsNotNull_appendEndpointCorrectly - 2019.01.19 at 15h 45m 43s.xml">
-      <configuration name="UrlTest.plusEndpoint whenEndpointIsNotNull appendEndpointCorrectly" configurationId="GradleRunConfiguration" />
+    <history-entry file="ServiceFactoryTest_onInit_serviceFunctionDoesNotReturDeferred_throwRequireDeferredException - 2019.01.20 at 10h 09m 05s.xml">
+      <configuration name="ServiceFactoryTest.onInit serviceFunctionDoesNotReturDeferred throwRequireDeferredException" configurationId="GradleRunConfiguration" />
     </history-entry>
-    <history-entry file="UrlTest - 2019.01.19 at 15h 46m 43s.xml">
-      <configuration name="UrlTest" configurationId="GradleRunConfiguration" />
+    <history-entry file="ServiceFactoryTest_runCorrectly - 2019.01.20 at 10h 09m 27s.xml">
+      <configuration name="ServiceFactoryTest.runCorrectly" configurationId="GradleRunConfiguration" />
     </history-entry>
-    <history-entry file="ServiceBuilderTest_test - 2019.01.19 at 16h 35m 53s.xml">
-      <configuration name="ServiceBuilderTest.test" configurationId="GradleRunConfiguration" />
+    <history-entry file="ServiceFactoryTest_runCorrectly - 2019.01.20 at 10h 09m 46s.xml">
+      <configuration name="ServiceFactoryTest.runCorrectly" configurationId="GradleRunConfiguration" />
     </history-entry>
-    <history-entry file="ServiceBuilderTest_test - 2019.01.19 at 16h 35m 54s.xml">
-      <configuration name="ServiceBuilderTest.test" configurationId="GradleRunConfiguration" />
+    <history-entry file="ServiceFactoryTest - 2019.01.20 at 10h 10m 02s.xml">
+      <configuration name="ServiceFactoryTest" configurationId="GradleRunConfiguration" />
     </history-entry>
-    <history-entry file="ServiceBuilderTest_test - 2019.01.19 at 16h 37m 27s.xml">
-      <configuration name="ServiceBuilderTest.test" configurationId="GradleRunConfiguration" />
+    <history-entry file="ServiceFactoryTest - 2019.01.20 at 10h 10m 29s.xml">
+      <configuration name="ServiceFactoryTest" configurationId="GradleRunConfiguration" />
     </history-entry>
-    <history-entry file="ServiceBuilderTest_test - 2019.01.19 at 16h 38m 31s.xml">
-      <configuration name="ServiceBuilderTest.test" configurationId="GradleRunConfiguration" />
+    <history-entry file="FunctionIdentifierTest_fromKFunction_createCorrectly - 2019.01.20 at 16h 33m 32s.xml">
+      <configuration name="FunctionIdentifierTest.fromKFunction createCorrectly" configurationId="GradleRunConfiguration" />
     </history-entry>
-    <history-entry file="ServiceBuilderTest_test - 2019.01.19 at 16h 39m 13s.xml">
-      <configuration name="ServiceBuilderTest.test" configurationId="GradleRunConfiguration" />
+    <history-entry file="FunctionIdentifierTest_fromKFunction_createCorrectly - 2019.01.20 at 16h 34m 07s.xml">
+      <configuration name="FunctionIdentifierTest.fromKFunction createCorrectly" configurationId="GradleRunConfiguration" />
     </history-entry>
-    <history-entry file="ServiceBuilderTest_test - 2019.01.19 at 16h 39m 58s.xml">
-      <configuration name="ServiceBuilderTest.test" configurationId="GradleRunConfiguration" />
+    <history-entry file="FunctionIdentifierTest_fromKFunction_createCorrectly - 2019.01.20 at 16h 35m 47s.xml">
+      <configuration name="FunctionIdentifierTest.fromKFunction createCorrectly" configurationId="GradleRunConfiguration" />
     </history-entry>
-    <history-entry file="ServiceBuilderTest_test - 2019.01.19 at 16h 45m 23s.xml">
-      <configuration name="ServiceBuilderTest.test" configurationId="GradleRunConfiguration" />
+    <history-entry file="FunctionIdentifierTest_fromKFunction_createCorrectly - 2019.01.20 at 16h 36m 48s.xml">
+      <configuration name="FunctionIdentifierTest.fromKFunction createCorrectly" configurationId="GradleRunConfiguration" />
     </history-entry>
-    <history-entry file="ServiceBuilderTest_test - 2019.01.19 at 16h 45m 26s.xml">
-      <configuration name="ServiceBuilderTest.test" configurationId="GradleRunConfiguration" />
+    <history-entry file="FunctionIdentifierTest_fromKFunction_createCorrectly - 2019.01.20 at 16h 37m 37s.xml">
+      <configuration name="FunctionIdentifierTest.fromKFunction createCorrectly" configurationId="GradleRunConfiguration" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24589000" />
+    <option name="totallyTimeSpent" value="41393000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="3840" height="2160" extended-state="0" />
@@ -550,7 +601,7 @@
       <window_info id="Capture Tool" />
       <window_info id="UI Designer" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.0892575" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.0892575" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Build" weight="0.5486982" />
       <window_info anchor="bottom" id="Terminal" />
@@ -560,8 +611,8 @@
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3297975" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.39633557" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.3997107" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.39633557" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3997107" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -580,26 +631,7 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/ermes/src/commonTest/kotlin/studio/forface/ermes/servicebuilder/ServiceFactoryTest.kt</url>
-          <line>19</line>
-          <properties />
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/sample/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-test-annotations-common/1.3.11/9425fffa138a07830eb9d0cbc436ec03437973ae/kotlin-test-annotations-common-1.3.11-sources.jar!/kotlin.test/Annotations.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
@@ -658,44 +690,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/entities/Url.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sample/src/main/kotlin/studio/forface/ermes/sample/SampleApi.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="6" column="58" selection-start-line="6" selection-start-column="58" selection-end-line="6" selection-end-column="58" />
-          <folding>
-            <element signature="e#37#179#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/api/ErmesApi.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
-          <folding>
-            <element signature="e#34#217#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-reflect/1.3.11/92835479c406bf6b1d55c41b0013f238a5ed5bd8/kotlin-reflect-1.3.11-sources.jar!/kotlin/reflect/jvm/internal/KClassImpl.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2639">
           <caret line="42" column="15" selection-start-line="42" selection-start-column="15" selection-end-line="42" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.3.11/d46e00faac79f8ec6bb956154ecde4282871a6bf/kotlin-stdlib-sources.jar!/common/kotlin/reflect/KClass.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -713,13 +711,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="6" column="56" selection-start-line="6" selection-start-column="56" selection-end-line="6" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ermes/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="869">
-          <caret line="91" column="4" selection-start-line="91" selection-start-column="4" selection-end-line="91" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -779,26 +770,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ermes/src/commonTest/kotlin/studio/forface/ermes/servicebuilder/ServiceFactoryTest.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="e#77#273#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/exceptions/exceptions.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
-          <folding>
-            <element signature="e#41#128#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-core-common/1.1.0/286cc6523cc957ab6c96c118cd36073974859aa7/kotlinx-coroutines-core-common-1.1.0-sources.jar!/CoroutineScope.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="401">
@@ -841,27 +812,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ermes/src/commonTest/kotlin/studio/forface/ermes/test.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="27" column="27" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
-          <folding>
-            <element signature="e#30#196#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.mockk/mockk-dsl/1.9/e450f6d06765535de0f1b37e95db9b5286e069e4/mockk-dsl-1.9-sources.jar!/io/mockk/API.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="401">
-          <caret line="2047" column="17" lean-forward="true" selection-start-line="2047" selection-start-column="17" selection-end-line="2047" selection-end-column="17" />
+          <caret line="2047" column="17" selection-start-line="2047" selection-start-column="17" selection-end-line="2047" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/src.zip!/java/lang/reflect/Proxy.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="766">
-          <caret line="738" column="16" lean-forward="true" selection-start-line="738" selection-start-column="16" selection-end-line="738" selection-end-column="16" />
+          <caret line="738" column="16" selection-start-line="738" selection-start-column="16" selection-end-line="738" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -872,20 +833,160 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/exceptions/exceptions.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="672">
+          <caret line="32" column="23" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
+          <folding>
+            <element signature="e#41#304#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ermes/src/commonTest/kotlin/studio/forface/ermes/test.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="12" column="50" selection-start-line="12" selection-start-column="50" selection-end-line="12" selection-end-column="50" />
+          <folding>
+            <element signature="e#30#196#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.3.11/d46e00faac79f8ec6bb956154ecde4282871a6bf/kotlin-stdlib-sources.jar!/common/kotlin/reflect/KClass.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.3.11/d46e00faac79f8ec6bb956154ecde4282871a6bf/kotlin-stdlib-1.3.11-sources.jar!/kotlin/reflect/KTypeParameter.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="32" column="111" selection-start-line="32" selection-start-column="47" selection-end-line="32" selection-end-column="111" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.3.11/d46e00faac79f8ec6bb956154ecde4282871a6bf/kotlin-stdlib-1.3.11-sources.jar!/kotlin/reflect/KClassifier.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="22" column="18" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.3.11/d46e00faac79f8ec6bb956154ecde4282871a6bf/kotlin-stdlib-1.3.11-sources.jar!/kotlin/reflect/KType.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="30" column="34" selection-start-line="30" selection-start-column="34" selection-end-line="30" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.3.11/d46e00faac79f8ec6bb956154ecde4282871a6bf/kotlin-stdlib-1.3.11-sources.jar!/kotlin/reflect/KCallable.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="34" column="30" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sample/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ermes/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="491">
+          <caret line="73" column="12" selection-start-line="73" selection-start-column="12" selection-end-line="73" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ermes/src/jvmMain/kotlin/studio/forface/ermes/servicebuilder/ServiceFactory.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="43" lean-forward="true" selection-start-line="2" selection-start-column="43" selection-end-line="2" selection-end-column="43" />
+        <state relative-caret-position="210">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/entities/Url.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="608">
+          <caret line="61" column="7" lean-forward="true" selection-start-line="61" selection-start-column="7" selection-end-line="61" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sample/src/main/kotlin/studio/forface/ermes/sample/SampleApi.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="e#37#285#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/servicebuilder/ServiceInstancesManager.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="15" column="25" selection-start-line="15" selection-end-line="16" />
+          <folding>
+            <element signature="e#45#114#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/api/ErmesApi.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-client-core/1.1.1/764aa2b0f55ee90e59e5e9092d4b8be1c32ba6a6/ktor-client-core-1.1.1-sources.jar!/commonMain/io/ktor/client/HttpClient.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="827">
+          <caret line="57" column="93" selection-start-line="56" selection-start-column="16" selection-end-line="57" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/annotations/methods.kt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ermes/src/commonTest/kotlin/studio/forface/ermes/servicebuilder/ServiceFactoryTest.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="27" column="27" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
+          <folding>
+            <element signature="e#77#273#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ermes/src/commonTest/kotlin/studio/forface/ermes/entities/FunctionIdentifierTest.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+          <folding>
+            <element signature="e#71#158#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/servicebuilder/ServiceFactory.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="734">
-          <caret line="48" column="7" lean-forward="true" selection-start-line="48" selection-start-column="7" selection-end-line="48" selection-end-column="7" />
+        <state relative-caret-position="1060">
+          <caret line="53" column="88" selection-start-line="53" selection-start-column="88" selection-end-line="53" selection-end-column="88" />
           <folding>
-            <element signature="e#45#473#0" expanded="true" />
+            <element signature="e#45#673#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/entities/FunctionIdentifier.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
         </state>
       </provider>
     </entry>
