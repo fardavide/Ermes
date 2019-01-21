@@ -1,59 +1,73 @@
+@file:Suppress("EXPERIMENTAL_FEATURE_WARNING")
+
 package studio.forface.ermes.entities
 
 import studio.forface.ermes.exceptions.InvalidUrlException
+import studio.forface.ermes.utils.appendIfNotEmpty
+import studio.forface.ermes.utils.appendIfNotNull
+import studio.forface.ermes.utils.set
 
 /**
  * @author Davide Giuseppe Farella.
  * A custom lightweight class for an Url.
  */
-internal class Url( private var s: String ) {
+internal data class Url(
+    private val base: String,
+    private var endpoint: Endpoint? = null,
+    private val queries: MutableMap<String, String> = mutableMapOf(),
+    private val paths: MutableList<UrlPath> = mutableListOf()
 
-    /**
-     * A [Boolean] for keep track whether a query is present, for choose if a new one should be concatenated with
-     * "?" of "&"
-     *
-     * @see addQuery
-     */
-    private var hasQuery = false
+) {
+    /** @return a new [Url] with the given [Endpoint] */
+    operator fun plus( endpoint: Endpoint? ) = copy( endpoint = endpoint )
 
-    /**
-     * Add a Query if [value] is not null.
-     *
-     * @param name the name of the query.
-     * @param value the value of the query.
-     *
-     * @see hasQuery
-     */
-    fun addQuery( name: String, value: String? ) {
-        value ?: return
-
-        val conjunction =
-                if ( ! hasQuery ) "?".also { hasQuery = true }
-                else "&"
-
-        plusAssign("$conjunction$name=$value" )
+    /** Set the given [Endpoint] to [Url.endpoint] */
+    operator fun plusAssign( endpoint: Endpoint? ) {
+        this.endpoint = endpoint
     }
 
-    /** Append an [Endpoint] to the Url, if not null */
-    operator fun plus( endpoint: Endpoint? ) = apply {
-        endpoint?.let { plusAssign("/$it" ) }
+    /** @return a new [Url] with the given [UrlPath] */
+    operator fun plus( path: UrlPath ) = copy().apply copy@ { this@copy += path }
+
+    /** Add the given [UrlPath] to [Url.paths] */
+    operator fun plusAssign( path: UrlPath ) {
+        this.paths.add( path )
     }
 
-    /** @see String.plus */
-    private operator fun plusAssign( other: String ) {
-        s += other
+    /** @return a new [Url] with the given [String] *path* */
+    operator fun plus( path: String ) = copy().apply copy@ { this@copy += path }
+
+    /** Add the given [String] to [Url.paths] */
+    operator fun plusAssign( path: String ) {
+        this.paths.add( UrlPath( path ) )
     }
 
-    /**
-     * Set a path value.
-     *
-     * @param old the [String] actually in [s]
-     * @param new the [String] that will replace [old] in [s]
-     *
-     * Eg:  > "http://website.it/news/newsId" -> "http://website.it/news/500"
-     */
-    fun setPath( old: String, new: String ) {
-        s = s.replace( old, new )
+    /** @return a new [Url] with the given [UrlQuery] */
+    operator fun plus( query: UrlQuery ) = copy().apply copy@ { this@copy += query }
+
+    /** Add the given [UrlQuery] to [Url.queries] */
+    operator fun plusAssign( query: UrlQuery ) {
+        this.queries[query.first] = query.second
+    }
+
+    /** Replace with the given [old] [UrlPath] with a [new] [UrlPath] in [Url.paths] */
+    operator fun set( old: UrlPath, new: UrlPath ) {
+        this.paths[old] = new
+    }
+
+    /** Replace with the given [oldPath] [String] *path* with a [newPath] [String] *path* in [Url.paths] */
+    operator fun set( oldPath: String, newPath: String ) {
+        this.paths[UrlPath( oldPath )] = UrlPath( newPath )
+    }
+
+    /** @return a valid [String] url with the available params */
+    override fun toString(): String {
+        validateOrThrow()
+        return StringBuilder( base )
+            .appendIfNotNull( endpoint, prefix = "/" )
+            .appendIfNotEmpty( paths, prefix = "/", separator = "/" )
+            .appendIfNotEmpty( queries, prefix = "?", separator = "&", joiner = "=" )
+            .toString()
     }
 
     /**
@@ -62,28 +76,34 @@ internal class Url( private var s: String ) {
      */
     internal fun validateOrThrow() : Url {
         when {
-            s.isBlank() -> throw InvalidUrlException( "No Url has been set" )
+            base.isBlank() -> throw InvalidUrlException( "No Url has been set" )
 
-            !s.startsWith("http://" ) && !s.startsWith( "https://" ) ->
+            !base.startsWith("http://" ) && !base.startsWith( "https://" ) ->
                 throw InvalidUrlException( "Url should start with 'http' or 'https''" )
 
-            !s.contains('.' ) -> throw InvalidUrlException( "An Url should contain at least a dot ( '.' )" )
+            !base.contains('.' ) -> throw InvalidUrlException( "An Url should contain at least a dot ( '.' )" )
         }
         return this
     }
 
-    /** @see Any.equals */
-    override operator fun equals( other: Any? ): Boolean {
-        return when ( other ) {
-            is String -> s == other
-            is Url -> this.s == other.s
-            else -> false
-        }
-    }
+    /** Override of [equals] using the [String] generate from [toString] */
+   override fun equals( other: Any? )= other.toString() == toString()
 
-    /** @see String.hashCode */
-    override fun hashCode(): Int = s.hashCode()
+    /** Override of [hashCode] using the [String] generate from [toString] */
+   override fun hashCode() = toString().hashCode()
+}
 
+/** A lightweight class for a [String] endpoint */
+internal inline class Endpoint( private val s: String ) {
     /** @see String */
     override fun toString(): String = s
 }
+
+/** A lightweight class for a [String] path */
+internal inline class UrlPath( private val s: String ) {
+    /** @see String */
+    override fun toString(): String = s
+}
+
+/** A typealias for a [Pair] of [String]s UrlQuery */
+internal typealias UrlQuery = Pair<String, String>

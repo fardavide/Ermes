@@ -5,7 +5,7 @@ import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.runBlocking
 import studio.forface.ermes.annotations.ApiService
 import studio.forface.ermes.api.ErmesApi
-import studio.forface.ermes.servicebuilder.service
+import studio.forface.ermes.servicefactory.service
 
 suspend fun main() = runBlocking {
     val url = "http://4face.studio"

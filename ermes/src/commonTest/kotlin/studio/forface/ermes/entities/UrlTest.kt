@@ -12,16 +12,36 @@ import kotlin.test.*
 class UrlTest {
 
     @Test
-    fun `plusEndpoint whenEndpointIsNull doNothing`() {
+    fun `toString allParams createRegularUrl`() {
         val url = Url("http://4face.studio" )
-        url + null
+        url += Endpoint("gallery" )
+        url += UrlPath("movies" )
+        url += UrlPath("userId" )
+        url["userId"] = "4face"
+        url += "sort" to "desc"
+        url += "year" to "2019"
+
+        assertEquals( url.toString(),"http://4face.studio/gallery/movies/4face?sort=desc&year=2019" )
+    }
+
+    @Test
+    fun `toString noParams createRegularUrl`() {
+        val url = Url("http://4face.studio" )
+
+        assertEquals( url.toString(),"http://4face.studio" )
+    }
+
+    @Test
+    fun `plusAssignEndpoint whenEndpointIsNull doNothing`() {
+        val url = Url("http://4face.studio" )
+        url += null
         assertEquals( url, Url("http://4face.studio" ) )
     }
 
     @Test
-    fun `plusEndpoint whenEndpointIsNotNull appendEndpointCorrectly`() {
+    fun `plusAssignEndpoint whenEndpointIsNotNull appendEndpointCorrectly`() {
         val url = Url("http://4face.studio" )
-        url + Endpoint( "endpoint" )
+        url += Endpoint( "endpoint" )
         assertEquals( url, Url("http://4face.studio/endpoint" ) )
     }
 

@@ -14,6 +14,7 @@ class FunctionIdentifierTest {
 
     @Test
     fun `fromKFunction createCorrectly`() {
+        @Suppress("unused", "UNUSED_PARAMETER")
         class TestClass { fun testMethod( one: Int, two: String ) {} }
 
         val kFun = TestClass::class.members.first { it.name == "testMethod" } as KFunction<*>

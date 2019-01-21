@@ -4,16 +4,12 @@ package studio.forface.ermes.api
 
 import io.ktor.client.HttpClient
 import io.ktor.client.HttpClientConfig
-import io.ktor.client.engine.HttpClientEngine
 import io.ktor.client.engine.HttpClientEngineConfig
 import io.ktor.client.engine.HttpClientEngineFactory
 import studio.forface.ermes.entities.Url
 import studio.forface.ermes.exceptions.InvalidUrlException
-import studio.forface.ermes.servicebuilder.ServiceFactory
-import studio.forface.ermes.servicebuilder.ServiceInstancesManager
-import studio.forface.ermes.servicebuilder.service
+import studio.forface.ermes.servicefactory.ServiceInstancesManager
 import studio.forface.ermes.utils.EMPTY_STRING
-import kotlin.properties.ReadOnlyProperty
 
 /**
  * @author Davide Giuseppe Farella.
@@ -27,11 +23,13 @@ open class ErmesApi(
     /** The [String] representation of the base url */
     baseUrl: String,
 
-    /** A [Boolean] representing whether the logging should be enabled */
-    open val logging: Boolean = false,
+    open val callAdapter: CallAdapter = DeferredCallAdapter,
 
     /** The [HttpClient] for the API */
-    open val client: HttpClient = HttpClient()
+    open val client: HttpClient = HttpClient(),
+
+    /** A [Boolean] representing whether the logging should be enabled */
+    open val logging: Boolean = false
 ) {
 
     /** An [Url] representing the base url for the API */
@@ -55,6 +53,9 @@ fun ErmesApi( baseUrl: String = EMPTY_STRING, block: ErmesApiBuilder.() -> Unit 
 /** A Builder for create [ErmesApi] via DSL */
 class ErmesApiBuilder internal constructor( /** @see ErmesApi.baseUrl */ var baseUrl: String ) {
 
+    /** @see ErmesApi.callAdapter */
+    var callAdapter = DeferredCallAdapter
+
     /** @see ErmesApi.client */
     var client = HttpClient()
 
@@ -75,5 +76,10 @@ class ErmesApiBuilder internal constructor( /** @see ErmesApi.baseUrl */ var bas
     }
 
     /** Create an instance of [ErmesApi] */
-    fun build() = ErmesApi( baseUrl, logging, client )
+    fun build() = ErmesApi(
+        baseUrl =       baseUrl,
+        callAdapter =   callAdapter,
+        client =        client,
+        logging =       logging
+    )
 }

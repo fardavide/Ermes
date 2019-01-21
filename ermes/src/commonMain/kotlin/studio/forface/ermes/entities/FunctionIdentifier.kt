@@ -1,5 +1,6 @@
 package studio.forface.ermes.entities
 
+import studio.forface.ermes.utils.valueParameters
 import kotlin.reflect.KFunction
 
 /**
@@ -21,4 +22,4 @@ internal class FunctionIdentifier( val name: String, val argsType: List<String> 
 
 /** A function for create [FunctionIdentifier] by a [KFunction] */
 internal val KFunction<*>.identifier get()=
-    FunctionIdentifier( name, parameters.drop(1 ).map { it.type.toString() } )
+    FunctionIdentifier( name, valueParameters.map { it.type.toString() } )

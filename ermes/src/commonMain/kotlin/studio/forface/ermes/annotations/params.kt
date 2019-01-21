@@ -1,5 +1,8 @@
 package studio.forface.ermes.annotations
 
+import studio.forface.ermes.utils.findAnnotation
+import kotlin.reflect.KParameter
+
 /*  Author: Davide Giuseppe Farella  */
 
 /** An annotation for Body param */
@@ -23,9 +26,21 @@ annotation class Path( val path: String )
 annotation class Query( val query: String )
 
 
-sealed class ApiParam {
+internal sealed class ApiParam {
     object Body : ApiParam()
     class Field( val s: String ) : ApiParam()
     class Path(  val s: String ) : ApiParam()
     class Query( val s: String ) : ApiParam()
+}
+
+/**
+ * Find an [ApiParam] annotation for the given [KParameter].
+ * If no annotations is found, null will be returned and the [KParameter] will be skipped.
+ * @return OPTIONAL [ApiParam].
+ */
+internal val KParameter.apiParam: ApiParam? get() {
+    return findAnnotation<Body>() ?.let { ApiParam.Body }
+        ?: findAnnotation<Field>()?.let { ApiParam.Field( it.name ) }
+        ?: findAnnotation<Path>() ?.let { ApiParam.Path( it.path ) }
+        ?: findAnnotation<Query>()?.let { ApiParam.Query( it.query ) }
 }
