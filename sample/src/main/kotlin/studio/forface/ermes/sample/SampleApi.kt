@@ -4,12 +4,14 @@ import io.ktor.client.HttpClient
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.runBlocking
 import studio.forface.ermes.annotations.ApiService
+import studio.forface.ermes.annotations.Get
 import studio.forface.ermes.api.ErmesApi
 import studio.forface.ermes.servicefactory.service
 
 
 @ApiService( endpoint = "samples" )
 interface SampleService {
+    @Get( "get_nothing" )
     fun string(): Deferred<String>
 }
 

@@ -1,13 +1,14 @@
 ## Basic example
 
 ```kotlin
-@ApiService( endpoint = "samples" )
+@ApiService( endpoint = "posts" )
 interface SampleService {
-    fun string(): Deferred<String>
+    @Get
+    fun string( @Query( "userId" ) userId: Int ): Deferred<String>
 }
 
 suspend fun main() = runBlocking {
-    val url = "http://4face.studio"
+    val url = "https://jsonplaceholder.typicode.com"
 
     // Example #1 - Explicit Service declaration ( property delegation ) via an implementation fo ErmesApi
     class SampleApi( baseUrl: String, override val client: HttpClient = HttpClient() ) : ErmesApi( baseUrl ) {
