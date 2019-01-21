@@ -1,13 +1,6 @@
-package studio.forface.ermes.sample
+## Basic example
 
-import io.ktor.client.HttpClient
-import kotlinx.coroutines.Deferred
-import kotlinx.coroutines.runBlocking
-import studio.forface.ermes.annotations.ApiService
-import studio.forface.ermes.api.ErmesApi
-import studio.forface.ermes.servicefactory.service
-
-
+```kotlin
 @ApiService( endpoint = "samples" )
 interface SampleService {
     fun string(): Deferred<String>
@@ -46,3 +39,5 @@ suspend fun main() = runBlocking {
     println( result1.await() )
     println( result2.await() )
 }
+```
+
