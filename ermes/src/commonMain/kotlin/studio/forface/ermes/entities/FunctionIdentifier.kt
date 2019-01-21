@@ -15,6 +15,8 @@ internal class FunctionIdentifier( val name: String, val argsType: List<String> 
     /** Sum [name] [hashCode] plus all the [argsType]s [hashCode] */
     override fun hashCode() =
         name.hashCode() + argsType.map { it.hashCode() }.reduce { acc, next -> acc + next }
+
+    override fun toString() = "$name: ${argsType.joinToString() }"
 }
 
 /** A function for create [FunctionIdentifier] by a [KFunction] */
