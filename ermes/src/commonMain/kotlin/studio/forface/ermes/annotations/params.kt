@@ -28,9 +28,9 @@ annotation class Query( val query: String )
 
 internal sealed class ApiParam {
     object Body : ApiParam()
-    class Field( val s: String ) : ApiParam()
-    class Path(  val s: String ) : ApiParam()
-    class Query( val s: String ) : ApiParam()
+    class Field( val field: String ) : ApiParam()
+    class Path(  val path: String ) : ApiParam()
+    class Query( val name: String ) : ApiParam()
 }
 
 /**

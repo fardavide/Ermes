@@ -1,5 +1,6 @@
 package studio.forface.ermes.annotations
 
+import io.ktor.http.HttpMethod
 import studio.forface.ermes.entities.UrlPath
 import studio.forface.ermes.exceptions.MissingAnnotationException
 import studio.forface.ermes.utils.EMPTY_STRING
@@ -29,13 +30,13 @@ annotation class Post( val path: String = EMPTY_STRING )
 annotation class Put( val path: String = EMPTY_STRING )
 
 
-internal sealed class ApiMethod( path: String ) {
+internal sealed class ApiMethod( path: String, val httpMethod: HttpMethod ) {
     val path = UrlPath( path )
 
-    class DELETE( s: String ) : ApiMethod( s )
-    class GET(    s: String ) : ApiMethod( s )
-    class POST(   s: String ) : ApiMethod( s )
-    class PUT(    s: String ) : ApiMethod( s )
+    class DELETE( s: String ) : ApiMethod( s, HttpMethod.Delete )
+    class GET(    s: String ) : ApiMethod( s, HttpMethod.Get )
+    class POST(   s: String ) : ApiMethod( s, HttpMethod.Post )
+    class PUT(    s: String ) : ApiMethod( s, HttpMethod.Put )
 }
 
 /**
