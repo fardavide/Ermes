@@ -26,7 +26,7 @@ class SampleApi(
 
 val api = SampleApi( url, HttpClient { expectSuccess = false } )
 
-println( api.sampleService.string().await() )
+println( api.sampleService.string( userId = 1 ).await() )
 ```
 
 ##### Usage example #2
@@ -36,7 +36,7 @@ println( api.sampleService.string().await() )
 ```kotlin
 val api = ErmesApi( url, logging = false )
 
-println( api<SampleService>.string().await() )
+println( api<SampleService>.string( userId = 1 ).await() )
 ```
 
 ##### Usage example #3
@@ -49,7 +49,7 @@ val api = ErmesApi( url ) {
     callAdapter = DeferredCallAdapter
 }
 
-println( api<SampleService>.string().await() )
+println( api<SampleService>.string( userId = 1 ).await() )
 ```
 
 ##### Usage example #4
@@ -63,5 +63,5 @@ val api4 = ErmesApi {
     client { expectSuccess = false }
 }
 
-println( api<SampleService>.string().await() )
+println( api<SampleService>.string( userId = 1 ).await() )
 ```
