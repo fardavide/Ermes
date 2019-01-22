@@ -4,9 +4,9 @@
     <facet type="kotlin-language" name="Kotlin">
       <configuration version="3" platform="JVM 1.6" useProjectSettings="false" isTestModule="true" externalProjectId=":ermes">
         <sourceSets>
+          <sourceSet>studio.forface.ermes.ermes.jvmMain</sourceSet>
           <sourceSet>studio.forface.ermes.ermes.commonTest</sourceSet>
           <sourceSet>studio.forface.ermes.ermes.commonMain</sourceSet>
-          <sourceSet>studio.forface.ermes.ermes.jvmMain</sourceSet>
         </sourceSets>
         <newMppModelJpsModuleKind>COMPILATION_AND_SOURCE_SET_HOLDER</newMppModelJpsModuleKind>
         <compilerSettings />

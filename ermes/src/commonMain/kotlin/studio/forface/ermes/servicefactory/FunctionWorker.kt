@@ -25,6 +25,7 @@ import kotlin.reflect.KFunction
  * @see invoke
  * @see preconditions
  */
+@PublishedApi
 internal class FunctionWorker( function: KFunction<*>, url: Url ) {
 
     /** The [String] name of the [KFunction] */
@@ -48,7 +49,7 @@ internal class FunctionWorker( function: KFunction<*>, url: Url ) {
      * @throws IllegalArgumentException
      * @see preconditions
      */
-    operator fun invoke( args: List<Any?> ): HttpCallParams {
+    operator fun invoke( args: Array<out Any?> ): HttpCallParams {
         val fields = mutableMapOf<String, String>()
         val bodies = mutableListOf<String>()
 

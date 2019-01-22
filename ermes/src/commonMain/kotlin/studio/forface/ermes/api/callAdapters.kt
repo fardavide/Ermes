@@ -18,7 +18,7 @@ interface CallAdapter {
     fun assertValidFunction( kFun: KFunction<*> )
 
     // TODO
-    fun wrapCall( call: () -> Any ): suspend () -> Any
+    fun <T : Any> wrapCall( call: suspend () -> T ): Any
 }
 
 /** A [CallAdapter] for Coroutines [Deferred] */
@@ -29,7 +29,7 @@ object DeferredCallAdapter : CallAdapter {
         if ( kFun.returnType.classifier != Deferred::class ) throw RequireDeferredException( kFun )
     }
 
-    override fun wrapCall( call: () -> Any ) = suspend { GlobalScope.async { call() } }
+    override fun <T : Any> wrapCall( call: suspend () -> T ): Any = GlobalScope.async { call() }
 }
 
 /** A [CallAdapter] for suspend functions */
@@ -40,5 +40,5 @@ object SuspendCallAdapter : CallAdapter {
         if ( ! kFun.isSuspend ) throw RequireSuspendException( kFun )
     }
 
-    override fun wrapCall( call: () -> Any ): suspend () -> Any = { call }
+    override fun <T : Any> wrapCall( call: suspend () -> T ): Any = TODO("Find way to call suspend: call()" )
 }

@@ -10,6 +10,7 @@ import studio.forface.ermes.utils.findAnnotation
 import studio.forface.ermes.utils.realFunctions
 import kotlin.properties.ReadOnlyProperty
 import kotlin.reflect.KClass
+import kotlin.reflect.KFunction
 import kotlin.reflect.KProperty
 
 /**
@@ -28,7 +29,7 @@ import kotlin.reflect.KProperty
  * @see serviceFunctions
  */
 @PublishedApi
-internal class ServiceFactory<S : Any>( ermesApi: ErmesApi, private val serviceKlass: KClass<S> ) {
+internal class ServiceFactory( ermesApi: ErmesApi, private val serviceKlass: KClass<*> ) {
 
     /**
      * An instance of [ApiServiceAnnotationWorker]
@@ -41,13 +42,13 @@ internal class ServiceFactory<S : Any>( ermesApi: ErmesApi, private val serviceK
     )
 
     /** A validated base [Url], ( with the [Endpoint] if not null ) for the calls */
-    private val baseUrl = ermesApi.baseUrl + apiServiceAnnotationWorker.endpoint
+    val baseUrl = ermesApi.baseUrl + apiServiceAnnotationWorker.endpoint
 
     /** The [ErmesApi.callAdapter] */
-    private val callAdapter = ermesApi.callAdapter
+    val callAdapter = ermesApi.callAdapter
 
     /** The [ErmesApi.client] */
-    private val client = ermesApi.client
+    val client = ermesApi.client
 
     /**
      * All the declared [realFunctions] of [serviceKlass]
@@ -55,30 +56,29 @@ internal class ServiceFactory<S : Any>( ermesApi: ErmesApi, private val serviceK
      * @throws Exception
      * @see CallAdapter.assertValidFunction
      */
-    private val serviceFunctions = serviceKlass.realFunctions
+    val serviceFunctions = serviceKlass.realFunctions
         .also { it.forEach { f -> callAdapter.assertValidFunction( f ) } }
 
     /** Create an implementation at runtime of the requested Service [S] */
-    operator fun invoke() : S {
+    inline operator fun <reified S : Any> invoke() : S {
 
-        val functionInvocationsHandlers = serviceFunctions
+        val httpCallInvoker = HttpCallInvoker( client )
+
+        val functionInvocationHandlers = serviceFunctions
             .map { it to FunctionWorker( it, baseUrl ) }
             .toMap()
 
-        //serviceFunctions.forEach {
-        //    val functionWorker = FunctionWorker( it, baseUrl ) // TODO .invoke( args )
-        //    val call = { /* TODO create call */ }
-        //}
-
-
-        //return makeProxy()
-
-        TODO("Not Implemented" )
+        return makeProxy( callAdapter, functionInvocationHandlers, httpCallInvoker )
     }
 }
 
 /** Platform dependant creation of Proxy */
-//internal expect inline fun <reified S : Any> ServiceFactory<S>.makeProxy() : S
+@PublishedApi
+internal expect inline fun <reified S : Any> ServiceFactory.makeProxy(
+    callAdapter: CallAdapter,
+    functionInvocationHandlers: Map<KFunction<*>, FunctionWorker>,
+    httpCallInvoker: HttpCallInvoker
+) : S
 
 /**
  * Create a Service by property delegation

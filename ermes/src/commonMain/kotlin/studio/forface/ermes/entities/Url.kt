@@ -11,6 +11,7 @@ import studio.forface.ermes.utils.set
  * @author Davide Giuseppe Farella.
  * A custom lightweight class for an Url.
  */
+@PublishedApi
 internal data class Url(
     private val base: String,
     private var endpoint: Endpoint? = null,

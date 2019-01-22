@@ -6,8 +6,8 @@
         <sourceSets>
           <sourceSet>studio.forface.ermes.ermes.macosX64Main</sourceSet>
           <sourceSet>studio.forface.ermes.ermes.commonMain</sourceSet>
-          <sourceSet>studio.forface.ermes.ermes.nativeMain</sourceSet>
           <sourceSet>studio.forface.ermes.ermes.nativeTest</sourceSet>
+          <sourceSet>studio.forface.ermes.ermes.nativeMain</sourceSet>
           <sourceSet>studio.forface.ermes.ermes.commonTest</sourceSet>
         </sourceSets>
         <newMppModelJpsModuleKind>COMPILATION_AND_SOURCE_SET_HOLDER</newMppModelJpsModuleKind>

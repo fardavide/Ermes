@@ -5,10 +5,10 @@
       <configuration version="3" platform="Native " useProjectSettings="false" isTestModule="true" externalProjectId=":ermes">
         <sourceSets>
           <sourceSet>studio.forface.ermes.ermes.commonMain</sourceSet>
-          <sourceSet>studio.forface.ermes.ermes.nativeMain</sourceSet>
-          <sourceSet>studio.forface.ermes.ermes.iosX64Main</sourceSet>
           <sourceSet>studio.forface.ermes.ermes.nativeTest</sourceSet>
+          <sourceSet>studio.forface.ermes.ermes.nativeMain</sourceSet>
           <sourceSet>studio.forface.ermes.ermes.commonTest</sourceSet>
+          <sourceSet>studio.forface.ermes.ermes.iosX64Main</sourceSet>
         </sourceSets>
         <newMppModelJpsModuleKind>COMPILATION_AND_SOURCE_SET_HOLDER</newMppModelJpsModuleKind>
         <compilerSettings />
