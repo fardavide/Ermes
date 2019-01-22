@@ -4,12 +4,14 @@
     <facet type="kotlin-language" name="Kotlin">
       <configuration version="3" platform="JavaScript " useProjectSettings="false" isTestModule="true" externalProjectId=":ermes">
         <sourceSets>
-          <sourceSet>studio.forface.ermes.ermes.commonTest</sourceSet>
           <sourceSet>studio.forface.ermes.ermes.jsMain</sourceSet>
+          <sourceSet>studio.forface.ermes.ermes.commonTest</sourceSet>
           <sourceSet>studio.forface.ermes.ermes.commonMain</sourceSet>
         </sourceSets>
         <newMppModelJpsModuleKind>COMPILATION_AND_SOURCE_SET_HOLDER</newMppModelJpsModuleKind>
-        <compilerSettings />
+        <compilerSettings>
+          <option name="additionalArguments" value="true" />
+        </compilerSettings>
         <compilerArguments>
           <option name="outputFile" value="$MODULE_DIR$/../../../ermes/build/classes/kotlin/js/test/ermes_test.js" />
           <option name="noStdlib" value="true" />

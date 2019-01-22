@@ -3,6 +3,7 @@ package studio.forface.ermes.sample
 import io.ktor.client.HttpClient
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.runBlocking
+import kotlinx.serialization.Serializable
 import studio.forface.ermes.annotations.ApiService
 import studio.forface.ermes.annotations.Get
 import studio.forface.ermes.annotations.Query
@@ -13,7 +14,7 @@ import studio.forface.ermes.servicefactory.service
 @ApiService( endpoint = "posts" )
 interface SampleService {
     @Get
-    fun string( @Query( "userId" ) userId: Int ): Deferred<String>
+    fun string( @Query( "userId" ) userId: Int ): Deferred<List<Post>>
 }
 
 suspend fun main() = runBlocking {
@@ -49,3 +50,6 @@ suspend fun main() = runBlocking {
     println( result1.await() )
     println( result2.await() )
 }
+
+@Serializable
+data class Post( val userId: Int, val id: Int, val title: String, val body: String )

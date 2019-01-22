@@ -1,4 +1,5 @@
 apply plugin: 'org.jetbrains.kotlin.platform.jvm'
+apply plugin: 'kotlinx-serialization'
 
 archivesBaseName = 'sample'
 
@@ -13,5 +14,6 @@ configurations {
 dependencies {
     implementation Libs.kotlin_jdk8
     implementation Libs.coroutines_jdk8
+    implementation Libs.serialization_jdk
     implementation project(":ermes")
 }

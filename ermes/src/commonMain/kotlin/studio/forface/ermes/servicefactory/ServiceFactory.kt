@@ -1,7 +1,7 @@
 package studio.forface.ermes.servicefactory
 
 import studio.forface.ermes.annotations.ApiService
-import studio.forface.ermes.api.CallAdapter
+import studio.forface.ermes.calladapters.CallAdapter
 import studio.forface.ermes.api.ErmesApi
 import studio.forface.ermes.entities.Endpoint
 import studio.forface.ermes.entities.Url

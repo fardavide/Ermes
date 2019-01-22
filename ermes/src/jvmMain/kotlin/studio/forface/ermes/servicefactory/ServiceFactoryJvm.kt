@@ -1,6 +1,8 @@
 package studio.forface.ermes.servicefactory
 
-import studio.forface.ermes.api.CallAdapter
+import io.ktor.client.response.HttpResponse
+import io.ktor.client.response.readText
+import studio.forface.ermes.calladapters.CallAdapter
 import java.lang.reflect.Proxy
 import kotlin.reflect.KFunction
 import kotlin.reflect.jvm.kotlinFunction
@@ -17,8 +19,13 @@ internal actual inline fun <reified S : Any> ServiceFactory.makeProxy(
         arrayOf<Class<*>>( S::class.java )
     ) { _, method, args ->
 
-        val functionWorker = functionInvocationHandlers[method.kotlinFunction]!!
-        callAdapter.wrapCall { httpCallInvoker<String>( functionWorker( args ) ) }
+        val kFunction = method.kotlinFunction!!
+        val functionWorker = functionInvocationHandlers[kFunction]!!
 
+        callAdapter.wrapCall {
+            val result = httpCallInvoker<HttpResponse>( functionWorker( args ) )
+
+            result.readText()
+        }
     } as S
 }

@@ -4,6 +4,9 @@
       <w>coroutines</w>
       <w>ermes</w>
       <w>farella</w>
+      <w>kotlinx</w>
+      <w>ktor</w>
+      <w>mockk</w>
     </words>
   </dictionary>
 </component>

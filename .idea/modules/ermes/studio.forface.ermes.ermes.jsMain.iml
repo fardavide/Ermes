@@ -7,7 +7,9 @@
           <sourceSet>studio.forface.ermes.ermes.commonMain</sourceSet>
         </sourceSets>
         <newMppModelJpsModuleKind>COMPILATION_AND_SOURCE_SET_HOLDER</newMppModelJpsModuleKind>
-        <compilerSettings />
+        <compilerSettings>
+          <option name="additionalArguments" value="true" />
+        </compilerSettings>
         <compilerArguments>
           <option name="outputFile" value="$MODULE_DIR$/../../../ermes/build/classes/kotlin/js/main/ermes.js" />
           <option name="noStdlib" value="true" />

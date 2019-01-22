@@ -77,3 +77,17 @@ buildscript {
         classpath "org.jetbrains.kotlin:kotlin-serialization:$Versions.kotlin"
     }
 }
+
+subprojects {
+    if (project.name.contains("native")) return
+
+    apply plugin: 'kotlinx-serialization'
+
+    tasks.withType(org.jetbrains.kotlin.gradle.tasks.AbstractKotlinCompile).all { task ->
+        if (task.name.contains("Test") || task.name.contains("Jmh")) {
+            task.kotlinOptions.freeCompilerArgs += true
+        } else {
+            task.kotlinOptions.freeCompilerArgs += true
+        }
+    }
+}

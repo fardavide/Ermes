@@ -2,11 +2,11 @@
 
 package studio.forface.ermes.api
 
-import io.mockk.verify
 import kotlinx.coroutines.Deferred
+import studio.forface.ermes.calladapters.DeferredCallAdapter
+import studio.forface.ermes.calladapters.SuspendCallAdapter
 import studio.forface.ermes.exceptions.RequireDeferredException
 import studio.forface.ermes.exceptions.RequireSuspendException
-import studio.forface.ermes.utils.realFunctions
 import kotlin.reflect.KFunction
 import kotlin.test.Test
 import kotlin.test.assertFailsWith

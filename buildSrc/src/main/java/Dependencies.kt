@@ -5,7 +5,7 @@ object Versions {
     val coroutines =        "1.1.0"
     val ktor =              "1.1.1"
     val mockk =             "1.9"
-    val serialization =     "0.9.1"
+    val serialization =     "0.9.0"
 }
 
 object Libs {
