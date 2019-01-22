@@ -5,18 +5,19 @@ import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.runBlocking
 import studio.forface.ermes.annotations.ApiService
 import studio.forface.ermes.annotations.Get
+import studio.forface.ermes.annotations.Query
 import studio.forface.ermes.api.ErmesApi
 import studio.forface.ermes.servicefactory.service
 
 
-@ApiService( endpoint = "samples" )
+@ApiService( endpoint = "posts" )
 interface SampleService {
-    @Get( "get_nothing" )
-    fun string(): Deferred<String>
+    @Get
+    fun string( @Query( "userId" ) userId: Int ): Deferred<String>
 }
 
 suspend fun main() = runBlocking {
-    val url = "http://4face.studio"
+    val url = "https://jsonplaceholder.typicode.com"
 
     // Example #1 - Explicit Service declaration ( property delegation ) via an implementation fo ErmesApi
     class SampleApi( baseUrl: String, override val client: HttpClient = HttpClient() ) : ErmesApi( baseUrl ) {
@@ -40,10 +41,10 @@ suspend fun main() = runBlocking {
     }
 
     // Example #1
-    val result1 = api1.sampleService.string()
+    val result1 = api1.sampleService.string( userId = 1 )
 
     // Example #(2,3,4)
-    val result2 = api2<SampleService>().string()
+    val result2 = api2<SampleService>().string( userId = 1 )
 
     println( result1.await() )
     println( result2.await() )

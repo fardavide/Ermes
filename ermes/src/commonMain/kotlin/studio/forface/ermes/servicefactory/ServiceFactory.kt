@@ -46,6 +46,9 @@ internal class ServiceFactory<S : Any>( ermesApi: ErmesApi, private val serviceK
     /** The [ErmesApi.callAdapter] */
     private val callAdapter = ermesApi.callAdapter
 
+    /** The [ErmesApi.client] */
+    private val client = ermesApi.client
+
     /**
      * All the declared [realFunctions] of [serviceKlass]
      *
@@ -58,6 +61,14 @@ internal class ServiceFactory<S : Any>( ermesApi: ErmesApi, private val serviceK
     /** Create an implementation at runtime of the requested Service [S] */
     operator fun invoke() : S {
 
+        val functionInvocationsHandlers = serviceFunctions
+            .map { it to FunctionWorker( it, baseUrl ) }
+            .toMap()
+
+        //serviceFunctions.forEach {
+        //    val functionWorker = FunctionWorker( it, baseUrl ) // TODO .invoke( args )
+        //    val call = { /* TODO create call */ }
+        //}
 
 
         //return makeProxy()
