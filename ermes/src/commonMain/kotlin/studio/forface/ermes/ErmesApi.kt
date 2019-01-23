@@ -8,6 +8,8 @@ import io.ktor.client.engine.HttpClientEngineConfig
 import io.ktor.client.engine.HttpClientEngineFactory
 import studio.forface.ermes.calladapters.CallAdapter
 import studio.forface.ermes.calladapters.DeferredCallAdapter
+import studio.forface.ermes.converters.Converter
+import studio.forface.ermes.converters.KotlinSerializationConverter
 import studio.forface.ermes.entities.Url
 import studio.forface.ermes.exceptions.InvalidUrlException
 import studio.forface.ermes.servicefactory.ServiceInstancesManager
@@ -25,7 +27,11 @@ open class ErmesApi(
     /** The [String] representation of the base url */
     baseUrl: String,
 
+    /** The [CallAdapter] for adapt http calls */
     open val callAdapter: CallAdapter = DeferredCallAdapter,
+
+    /** The [Converter] for deserialize http call results */
+    open val converter: Converter = KotlinSerializationConverter,
 
     /** The [HttpClient] for the API */
     open val client: HttpClient = HttpClient(),
@@ -58,6 +64,9 @@ class ErmesApiBuilder internal constructor( /** @see ErmesApi.baseUrl */ var bas
     /** @see ErmesApi.callAdapter */
     var callAdapter = DeferredCallAdapter
 
+    /** @see ErmesApi.converter */
+    var converter = KotlinSerializationConverter
+
     /** @see ErmesApi.client */
     var client = HttpClient()
 
@@ -81,6 +90,7 @@ class ErmesApiBuilder internal constructor( /** @see ErmesApi.baseUrl */ var bas
     fun build() = ErmesApi(
         baseUrl =       baseUrl,
         callAdapter =   callAdapter,
+        converter =     converter,
         client =        client,
         logging =       logging
     )

@@ -3,6 +3,7 @@ package studio.forface.ermes.servicefactory
 import studio.forface.ermes.annotations.ApiService
 import studio.forface.ermes.calladapters.CallAdapter
 import studio.forface.ermes.api.ErmesApi
+import studio.forface.ermes.converters.Converter
 import studio.forface.ermes.entities.Endpoint
 import studio.forface.ermes.entities.Url
 import studio.forface.ermes.exceptions.MissingAnnotationException
@@ -47,6 +48,9 @@ internal class ServiceFactory( ermesApi: ErmesApi, private val serviceKlass: KCl
     /** The [ErmesApi.callAdapter] */
     val callAdapter = ermesApi.callAdapter
 
+    /** The [ErmesApi.converter] */
+    val converter = ermesApi.converter
+
     /** The [ErmesApi.client] */
     val client = ermesApi.client
 
@@ -68,7 +72,7 @@ internal class ServiceFactory( ermesApi: ErmesApi, private val serviceKlass: KCl
             .map { it to FunctionWorker( it, baseUrl ) }
             .toMap()
 
-        return makeProxy( callAdapter, functionInvocationHandlers, httpCallInvoker )
+        return makeProxy( callAdapter, converter, functionInvocationHandlers, httpCallInvoker )
     }
 }
 
@@ -76,6 +80,7 @@ internal class ServiceFactory( ermesApi: ErmesApi, private val serviceKlass: KCl
 @PublishedApi
 internal expect inline fun <reified S : Any> ServiceFactory.makeProxy(
     callAdapter: CallAdapter,
+    converter: Converter,
     functionInvocationHandlers: Map<KFunction<*>, FunctionWorker>,
     httpCallInvoker: HttpCallInvoker
 ) : S

@@ -8,6 +8,7 @@ import kotlinx.serialization.json.JSON
 import kotlinx.serialization.parse
 import kotlinx.serialization.serializerByTypeToken
 import studio.forface.ermes.calladapters.CallAdapter
+import studio.forface.ermes.converters.Converter
 import java.lang.reflect.Proxy
 import java.lang.reflect.Type
 import kotlin.collections.Map
@@ -21,6 +22,7 @@ import kotlin.reflect.jvm.kotlinFunction
 @PublishedApi
 internal actual inline fun <reified S : Any> ServiceFactory.makeProxy(
     callAdapter: CallAdapter,
+    converter: Converter,
     functionInvocationHandlers: Map<KFunction<*>, FunctionWorker>,
     httpCallInvoker: HttpCallInvoker
 ): S {
@@ -37,12 +39,13 @@ internal actual inline fun <reified S : Any> ServiceFactory.makeProxy(
             val result = httpCallInvoker<HttpResponse>( httpParams )
 
             val returnType = kFunction.unwrapReturnType()
-            when( val classifier = returnType.classifier ) {
-                HttpResponse::class ->  result
-                String::class ->        result.readText()
-                ByteArray::class ->     result.readBytes()
-                else -> JSON.parse( KSerializersCache( returnType.javaType ), result.readText() )
-            }
+            // when( val classifier = returnType.classifier ) {
+            //     HttpResponse::class ->  result
+            //     String::class ->        result.readText()
+            //     ByteArray::class ->     result.readBytes()
+            //     else -> JSON.parse( KSerializersCache( returnType.javaType ), result.readText() )
+            // }
+            converter( result, returnType )
         }
     } as S
 }

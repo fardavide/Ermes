@@ -9,6 +9,9 @@
       <change beforePath="$PROJECT_DIR$/.gradle/4.7/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.7/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/ErmesApi.kt" beforeDir="false" afterPath="$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/ErmesApi.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/converters/Converter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/converters/converters.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/servicefactory/ServiceFactory.kt" beforeDir="false" afterPath="$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/servicefactory/ServiceFactory.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ermes/src/jvmMain/kotlin/studio/forface/ermes/servicefactory/ServiceFactoryJvm.kt" beforeDir="false" afterPath="$PROJECT_DIR$/ermes/src/jvmMain/kotlin/studio/forface/ermes/servicefactory/ServiceFactoryJvm.kt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -48,19 +51,19 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/servicefactory/ServiceFactory.kt">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="291">
-                  <caret line="61" column="75" selection-start-line="61" selection-start-column="75" selection-end-line="61" selection-end-column="75" />
+                <state relative-caret-position="746">
+                  <caret line="74" column="50" selection-start-line="74" selection-start-column="50" selection-end-line="74" selection-end-column="50" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/ermes/src/jvmMain/kotlin/studio/forface/ermes/servicefactory/ServiceFactoryJvm.kt">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="627">
-                  <caret line="34" column="30" lean-forward="true" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
+                <state relative-caret-position="777">
+                  <caret line="37" column="51" selection-start-line="37" selection-start-column="51" selection-end-line="37" selection-end-column="51" />
                   <folding>
-                    <element signature="e#45#580#0" expanded="true" />
+                    <element signature="e#45#656#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -75,29 +78,50 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-serialization-runtime/0.9.0/b967e9054e93f29f3613177bfa6930f6709d9e3d/kotlinx-serialization-runtime-0.9.0-sources.jar!/kotlinx/serialization/Resolving.kt">
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/converters/converters.kt">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="814">
-                  <caret line="85" column="4" selection-start-line="85" selection-start-column="4" selection-end-line="85" selection-end-column="4" />
+                <state relative-caret-position="432">
+                  <caret line="40" column="63" lean-forward="true" selection-start-line="40" selection-start-column="63" selection-end-line="40" selection-end-column="63" />
+                  <folding>
+                    <element signature="e#75#376#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-serialization-runtime/0.9.0/b967e9054e93f29f3613177bfa6930f6709d9e3d/kotlinx-serialization-runtime-0.9.0-sources.jar!/kotlinx/serialization/SerialFormat.kt">
+            <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-serialization-runtime-common/0.9.0/14d68224aa7f127573152c1992048a6b575fdb35/kotlinx-serialization-runtime-common-0.9.0-sources.jar!/kotlinx/serialization/Shorthands.kt">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="672">
-                  <caret line="33" column="10" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="10" />
+                <state relative-caret-position="252">
+                  <caret line="26" column="48" selection-start-line="26" selection-start-column="48" selection-end-line="26" selection-end-column="48" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/converters/Converter.kt">
+            <entry file="file://$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/ErmesApi.kt">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="392">
+                  <caret line="70" column="29" selection-start-line="70" selection-start-column="29" selection-end-line="70" selection-end-column="29" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-serialization-runtime-common/0.9.0/14d68224aa7f127573152c1992048a6b575fdb35/kotlinx-serialization-runtime-common-0.9.0-sources.jar!/kotlinx/serialization/SerialImplicits.kt">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="698">
+                  <caret line="42" selection-start-line="42" selection-end-line="48" selection-end-column="92" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-serialization-runtime-common/0.9.0/14d68224aa7f127573152c1992048a6b575fdb35/kotlinx-serialization-runtime-common-0.9.0-sources.jar!/kotlinx/serialization/SerialFormat.kt">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="147">
-                  <caret line="7" selection-start-line="7" selection-end-line="7" />
+                  <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
                 </state>
               </provider>
             </entry>
@@ -109,8 +133,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/sample/src/main/kotlin/studio/forface/ermes/sample/SampleApi.kt">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="336">
-                  <caret line="16" column="69" lean-forward="true" selection-start-line="16" selection-start-column="59" selection-end-line="16" selection-end-column="69" />
+                <state relative-caret-position="588">
+                  <caret line="28" column="36" lean-forward="true" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
                   <folding>
                     <element signature="e#37#375#0" expanded="true" />
                   </folding>
@@ -143,8 +167,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/servicebuilder/ServiceBuilder.kt" />
-        <option value="$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/servicebuilder/SuspendInvocationHandler.kt" />
         <option value="$PROJECT_DIR$/ermes/src/jvmMain/kotlin/studio/forface/ermes/servicebuilder/makeProxy.kt" />
         <option value="$PROJECT_DIR$/ermes/src/commonTest/kotlin/studio/forface/ermes/test.kt" />
         <option value="$PROJECT_DIR$/ermes/src/commonTest/kotlin/studio/forface/ermes/servicebuilder/ServiceFactoryTest.kt" />
@@ -181,7 +203,6 @@
         <option value="$PROJECT_DIR$/ermes/src/jvmMain/kotlin/studio/forface/ermes/servicefactory/ServiceFactory.kt" />
         <option value="$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/api/ErmesApi.kt" />
         <option value="$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/servicefactory/ServiceInstancesManager.kt" />
-        <option value="$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/servicefactory/ServiceFactory.kt" />
         <option value="$PROJECT_DIR$/ermes/build.gradle" />
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/sample/build.gradle" />
@@ -189,11 +210,14 @@
         <option value="$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/converters/kotlinxserialization/DeserializationStrategyConverter.kt" />
         <option value="$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/converters/kotlinxserialization/KotlinSerializationConverter.kt" />
         <option value="$PROJECT_DIR$/buildSrc/src/main/java/Dependencies.kt" />
-        <option value="$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/converters/Converter.kt" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.kts" />
         <option value="$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/calladapters/callAdapters.kt" />
         <option value="$PROJECT_DIR$/sample/src/main/kotlin/studio/forface/ermes/sample/SampleApi.kt" />
+        <option value="$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/converters/Converter.kt" />
+        <option value="$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/ErmesApi.kt" />
+        <option value="$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/servicefactory/ServiceFactory.kt" />
         <option value="$PROJECT_DIR$/ermes/src/jvmMain/kotlin/studio/forface/ermes/servicefactory/ServiceFactoryJvm.kt" />
+        <option value="$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/converters/converters.kt" />
       </list>
     </option>
   </component>
@@ -290,26 +314,6 @@
               <item name="Ermes" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="ermes" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="commonMain" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
-              <item name="ermes" type="462c0819:PsiDirectoryNode" />
-              <item name="converters" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Ermes" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Ermes" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="ermes" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="commonMain" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
-              <item name="ermes" type="462c0819:PsiDirectoryNode" />
-              <item name="servicefactory" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Ermes" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Ermes" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="ermes" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="jvmMain" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
             <path>
@@ -364,7 +368,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548269968938" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548272898975" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="kotlin" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/ermes/src/jvmTest/kotlin" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -515,7 +519,7 @@
       <updated>1547822748701</updated>
       <workItem from="1547822750072" duration="66124000" />
       <workItem from="1548163149957" duration="3885000" />
-      <workItem from="1548167320298" duration="14595000" />
+      <workItem from="1548167320298" duration="17403000" />
     </task>
     <servers />
   </component>
@@ -552,7 +556,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84604000" />
+    <option name="totallyTimeSpent" value="87412000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="3840" height="2160" extended-state="0" />
@@ -563,7 +567,7 @@
       <window_info id="UI Designer" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Designer" order="4" />
-      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.10110585" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.10110585" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" weight="0.3297975" />
       <window_info anchor="bottom" id="Docker" order="1" show_stripe_button="false" />
@@ -573,7 +577,7 @@
       <window_info anchor="bottom" id="Build" order="5" weight="0.5486982" />
       <window_info anchor="bottom" id="Message" order="6" />
       <window_info anchor="bottom" id="Find" order="7" weight="0.3297975" />
-      <window_info active="true" anchor="bottom" id="Run" order="8" visible="true" weight="0.5014465" />
+      <window_info anchor="bottom" id="Run" order="8" visible="true" weight="0.5014465" />
       <window_info anchor="bottom" id="Debug" order="9" weight="0.3997107" />
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
@@ -595,44 +599,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.3.11/d46e00faac79f8ec6bb956154ecde4282871a6bf/kotlin-stdlib-1.3.11-sources.jar!/kotlin/reflect/KType.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="30" column="34" selection-start-line="30" selection-start-column="34" selection-end-line="30" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ermes/src/jsMain/kotlin/studio/forface/ermes/utils/reflection.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" selection-start-line="5" selection-end-line="9" selection-end-column="99" />
-          <folding>
-            <element signature="e#36#100#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ermes/src/nativeMain/kotlin/studio/forface/ermes/servicebuilder/Test.kt" />
-    <entry file="file://$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/entities/FunctionIdentifier.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="23" column="43" lean-forward="true" selection-start-line="23" selection-start-column="43" selection-end-line="23" selection-end-column="43" />
-          <folding>
-            <element signature="e#39#120#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ermes/src/jvmMain/kotlin/studio/forface/ermes/entities/FunctionIdentifierJvm.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="3" column="40" lean-forward="true" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
-          <folding>
-            <element signature="e#39#111#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ermes/src/jvmTest/kotlin/studio/forface/ermes/entities/FunctionIdentifierJvmTest.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -820,13 +786,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/ErmesApi.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="43" column="4" selection-start-line="43" selection-start-column="4" selection-end-line="43" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/servicefactory/ServiceInstancesManager.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="438">
@@ -919,13 +878,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/converters/Converter.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-serialization-runtime-common/0.9.0/60a5cff42154138cb4d5a8b4b70f676fd7b27376/kotlinx-serialization-runtime-common-0.9.0.jar!/kotlinx/serialization/json/JSON.kotlin_metadata">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -940,17 +892,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/servicefactory/ServiceFactory.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="61" column="75" selection-start-line="61" selection-start-column="75" selection-end-line="61" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.konan/kotlin-native-macos-1.0.3/klib/common/stdlib/linkdata/package_kotlin.native.internal/0_internal.knm">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="401">
           <caret line="360" column="21" selection-start-line="360" selection-start-column="21" selection-end-line="360" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-serialization-runtime/0.9.0/b967e9054e93f29f3613177bfa6930f6709d9e3d/kotlinx-serialization-runtime-0.9.0-sources.jar!/kotlinx/serialization/json/JsonParser.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="331">
+          <caret line="116" column="21" selection-start-line="116" selection-start-column="21" selection-end-line="116" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-serialization-runtime/0.9.0/b967e9054e93f29f3613177bfa6930f6709d9e3d/kotlinx-serialization-runtime-0.9.0-sources.jar!/kotlinx/serialization/json/JSON.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="40" column="25" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -961,17 +920,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/calladapters/callAdapters.kt">
+    <entry file="file://$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/ErmesApi.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="33" column="21" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
+        <state relative-caret-position="392">
+          <caret line="70" column="29" selection-start-line="70" selection-start-column="29" selection-end-line="70" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/servicefactory/ServiceFactory.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="746">
+          <caret line="74" column="50" selection-start-line="74" selection-start-column="50" selection-end-line="74" selection-end-column="50" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sample/src/main/kotlin/studio/forface/ermes/sample/SampleApi.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="16" column="69" lean-forward="true" selection-start-line="16" selection-start-column="59" selection-end-line="16" selection-end-column="69" />
+        <state relative-caret-position="588">
+          <caret line="28" column="36" lean-forward="true" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
           <folding>
             <element signature="e#37#375#0" expanded="true" />
           </folding>
@@ -980,10 +946,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ermes/src/jvmMain/kotlin/studio/forface/ermes/servicefactory/ServiceFactoryJvm.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="627">
-          <caret line="34" column="30" lean-forward="true" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
+        <state relative-caret-position="777">
+          <caret line="37" column="51" selection-start-line="37" selection-start-column="51" selection-end-line="37" selection-end-column="51" />
           <folding>
-            <element signature="e#45#580#0" expanded="true" />
+            <element signature="e#45#656#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-serialization-runtime-common/0.9.0/14d68224aa7f127573152c1992048a6b575fdb35/kotlinx-serialization-runtime-common-0.9.0-sources.jar!/kotlinx/serialization/SerialFormat.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-serialization-runtime-common/0.9.0/14d68224aa7f127573152c1992048a6b575fdb35/kotlinx-serialization-runtime-common-0.9.0-sources.jar!/kotlinx/serialization/SerialImplicits.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="698">
+          <caret line="42" selection-start-line="42" selection-end-line="48" selection-end-column="92" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/calladapters/callAdapters.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="33" column="21" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-serialization-runtime-common/0.9.0/14d68224aa7f127573152c1992048a6b575fdb35/kotlinx-serialization-runtime-common-0.9.0-sources.jar!/kotlinx/serialization/Shorthands.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="26" column="48" selection-start-line="26" selection-start-column="48" selection-end-line="26" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/converters/converters.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="40" column="63" lean-forward="true" selection-start-line="40" selection-start-column="63" selection-end-line="40" selection-end-column="63" />
+          <folding>
+            <element signature="e#75#376#0" expanded="true" />
           </folding>
         </state>
       </provider>
