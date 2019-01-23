@@ -9,9 +9,6 @@
       <change beforePath="$PROJECT_DIR$/.gradle/4.7/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.7/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/buildSrc/.gradle/4.7/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/buildSrc/.gradle/4.7/taskHistory/taskHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/buildSrc/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/buildSrc/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/calladapters/callAdapters.kt" beforeDir="false" afterPath="$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/calladapters/callAdapters.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ermes/src/jvmMain/kotlin/studio/forface/ermes/servicefactory/ServiceFactoryJvm.kt" beforeDir="false" afterPath="$PROJECT_DIR$/ermes/src/jvmMain/kotlin/studio/forface/ermes/servicefactory/ServiceFactoryJvm.kt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -60,8 +57,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/ermes/src/jvmMain/kotlin/studio/forface/ermes/servicefactory/ServiceFactoryJvm.kt">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="693">
-                  <caret line="33" column="2" selection-start-line="33" selection-start-column="2" selection-end-line="34" selection-end-column="68" />
+                <state relative-caret-position="627">
+                  <caret line="34" column="30" lean-forward="true" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
                   <folding>
                     <element signature="e#45#580#0" expanded="true" />
                   </folding>
@@ -112,8 +109,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/sample/src/main/kotlin/studio/forface/ermes/sample/SampleApi.kt">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="672">
-                  <caret line="32" column="24" lean-forward="true" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
+                <state relative-caret-position="336">
+                  <caret line="16" column="69" lean-forward="true" selection-start-line="16" selection-start-column="59" selection-end-line="16" selection-end-column="69" />
                   <folding>
                     <element signature="e#37#375#0" expanded="true" />
                   </folding>
@@ -193,9 +190,9 @@
         <option value="$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/converters/kotlinxserialization/KotlinSerializationConverter.kt" />
         <option value="$PROJECT_DIR$/buildSrc/src/main/java/Dependencies.kt" />
         <option value="$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/converters/Converter.kt" />
-        <option value="$PROJECT_DIR$/sample/src/main/kotlin/studio/forface/ermes/sample/SampleApi.kt" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.kts" />
         <option value="$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/calladapters/callAdapters.kt" />
+        <option value="$PROJECT_DIR$/sample/src/main/kotlin/studio/forface/ermes/sample/SampleApi.kt" />
         <option value="$PROJECT_DIR$/ermes/src/jvmMain/kotlin/studio/forface/ermes/servicefactory/ServiceFactoryJvm.kt" />
       </list>
     </option>
@@ -367,7 +364,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548267538166" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548269968938" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="kotlin" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/ermes/src/jvmTest/kotlin" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -518,7 +515,7 @@
       <updated>1547822748701</updated>
       <workItem from="1547822750072" duration="66124000" />
       <workItem from="1548163149957" duration="3885000" />
-      <workItem from="1548167320298" duration="13682000" />
+      <workItem from="1548167320298" duration="14595000" />
     </task>
     <servers />
   </component>
@@ -555,7 +552,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83691000" />
+    <option name="totallyTimeSpent" value="84604000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="3840" height="2160" extended-state="0" />
@@ -576,7 +573,7 @@
       <window_info anchor="bottom" id="Build" order="5" weight="0.5486982" />
       <window_info anchor="bottom" id="Message" order="6" />
       <window_info anchor="bottom" id="Find" order="7" weight="0.3297975" />
-      <window_info anchor="bottom" id="Run" order="8" weight="0.5014465" />
+      <window_info active="true" anchor="bottom" id="Run" order="8" visible="true" weight="0.5014465" />
       <window_info anchor="bottom" id="Debug" order="9" weight="0.3997107" />
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
@@ -964,16 +961,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sample/src/main/kotlin/studio/forface/ermes/sample/SampleApi.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="32" column="24" lean-forward="true" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
-          <folding>
-            <element signature="e#37#375#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ermes/src/commonMain/kotlin/studio/forface/ermes/calladapters/callAdapters.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="546">
@@ -981,10 +968,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/sample/src/main/kotlin/studio/forface/ermes/sample/SampleApi.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="16" column="69" lean-forward="true" selection-start-line="16" selection-start-column="59" selection-end-line="16" selection-end-column="69" />
+          <folding>
+            <element signature="e#37#375#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ermes/src/jvmMain/kotlin/studio/forface/ermes/servicefactory/ServiceFactoryJvm.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="693">
-          <caret line="33" column="2" selection-start-line="33" selection-start-column="2" selection-end-line="34" selection-end-column="68" />
+        <state relative-caret-position="627">
+          <caret line="34" column="30" lean-forward="true" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
           <folding>
             <element signature="e#45#580#0" expanded="true" />
           </folding>

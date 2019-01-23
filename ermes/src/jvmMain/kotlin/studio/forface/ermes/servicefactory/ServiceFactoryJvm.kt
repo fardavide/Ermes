@@ -1,9 +1,11 @@
 package studio.forface.ermes.servicefactory
 
 import io.ktor.client.response.HttpResponse
+import io.ktor.client.response.readBytes
 import io.ktor.client.response.readText
 import kotlinx.serialization.KSerializer
 import kotlinx.serialization.json.JSON
+import kotlinx.serialization.parse
 import kotlinx.serialization.serializerByTypeToken
 import studio.forface.ermes.calladapters.CallAdapter
 import java.lang.reflect.Proxy
@@ -34,8 +36,13 @@ internal actual inline fun <reified S : Any> ServiceFactory.makeProxy(
             val httpParams = functionWorker( args )
             val result = httpCallInvoker<HttpResponse>( httpParams )
 
-            val strategy = KSerializersCache( kFunction.unwrapReturnType().javaType )
-            JSON.parse( strategy, result.readText() )
+            val returnType = kFunction.unwrapReturnType()
+            when( val classifier = returnType.classifier ) {
+                HttpResponse::class ->  result
+                String::class ->        result.readText()
+                ByteArray::class ->     result.readBytes()
+                else -> JSON.parse( KSerializersCache( returnType.javaType ), result.readText() )
+            }
         }
     } as S
 }
