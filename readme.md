@@ -108,7 +108,7 @@ println( api<SampleService>.posts( userId = 1 ).await() )
 
 ## Authenticator:
 
-*For use **Authenticator** use `authenticator { serviceIdentifier -> }` or assing it explicitally with `authentificator = myIdentificator`*
+*For use **Authenticator** use `authenticator { serviceIdentifier -> }` or assing it explicitally with `authenticator = myAuthenticator`*
 
 
 
