@@ -62,13 +62,13 @@ fun ErmesApi( baseUrl: String = EMPTY_STRING, block: ErmesApiBuilder.() -> Unit 
 class ErmesApiBuilder internal constructor( /** @see ErmesApi.baseUrl */ var baseUrl: String ) {
 
     /** @see ErmesApi.callAdapter */
-    var callAdapter = DeferredCallAdapter
+    var callAdapter: CallAdapter = DeferredCallAdapter
 
     /** @see ErmesApi.converter */
-    var converter = KotlinSerializationConverter
+    var converter: Converter = KotlinSerializationConverter
 
     /** @see ErmesApi.client */
-    var client = HttpClient()
+    var client: HttpClient = HttpClient()
 
     /** @see ErmesApi.logging */
     var logging = false

@@ -56,7 +56,8 @@ internal class FunctionWorker( function: KFunction<*>, url: Url ) {
         // For each arg in `args`, get the param from `params` with the same index, if both of there are NOT null, then
         // save the given params in `fields` or `bodies` or directly append to `url`
         args.map { it?.toString() }.forEachIndexed { index, arg ->
-            val param = params[index]
+            // TODO
+            val param = try { params[index] } catch ( e: IndexOutOfBoundsException ) { null }
             if ( param != null && arg != null ) {
 
                 @Suppress("REDUNDANT_ELSE_IN_WHEN")

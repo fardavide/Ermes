@@ -1,4 +1,4 @@
-@file:Suppress("UNCHECKED_CAST")
+@file:Suppress("UNCHECKED_CAST", "KDocUnresolvedReference")
 
 package studio.forface.ermes.converters
 
@@ -37,16 +37,19 @@ object KotlinSerializationConverter : Converter {
         }
     }
 
+    /** @see kotlinx.serialization.parse */
     @ImplicitReflectionSerializer
     fun StringFormat.parse( kType: KType, str: String ): Any =
         parse( context.getOrDefault( kType.classifier as KClass<*> ), str )
 
+    /** @see kotlinx.serialization.parseList */
     @ImplicitReflectionSerializer
     fun StringFormat.parseList( kType: KType, objects: String ): List<Any> {
         val kClass = kType.arguments.first().type!!.classifier as KClass<*>
         return parse( context.getOrDefault( kClass ).list, objects )
     }
 
+    /** @see kotlinx.serialization.parseMap */
     @ImplicitReflectionSerializer
     fun StringFormat.parseMap( kType: KType, map: String ): Map<Any, Any> {
         val kTypeArgs = kType.arguments

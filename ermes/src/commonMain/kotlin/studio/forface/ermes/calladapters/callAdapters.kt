@@ -3,6 +3,7 @@ package studio.forface.ermes.calladapters
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.async
+import kotlinx.coroutines.launch
 import studio.forface.ermes.exceptions.RequireDeferredException
 import studio.forface.ermes.exceptions.RequireSuspendException
 import kotlin.reflect.KFunction
@@ -35,7 +36,7 @@ interface CallAdapter {
         if ( hasWrapType ) returnType.arguments.first().type!! else returnType
 
     /** Wrap an http call in the proper way */
-    fun <T : Any> wrapCall( call: suspend CallAdapter.() -> T ): Any
+    suspend fun <T : Any> wrapCall( call: suspend CallAdapter.() -> T ): Any
 }
 
 /** A [CallAdapter] for Coroutines [Deferred] */
@@ -50,12 +51,12 @@ object DeferredCallAdapter : CallAdapter {
     }
 
     /** Wrap an http call into a [Deferred] */
-    override fun <T : Any> wrapCall( call: suspend CallAdapter.() -> T ): Any =
+    override suspend fun <T : Any> wrapCall( call: suspend CallAdapter.() -> T ): Any =
         GlobalScope.async { this@DeferredCallAdapter.call() }
 }
 
 /** A [CallAdapter] for suspend functions */
-internal object SuspendCallAdapter : CallAdapter { //TODO not implemented, make public
+object SuspendCallAdapter : CallAdapter { //TODO not implemented, make public
 
     /** No wrap type */
     override val hasWrapType = false
@@ -66,6 +67,5 @@ internal object SuspendCallAdapter : CallAdapter { //TODO not implemented, make 
     }
 
     /** Wrap an http call into a suspend function */
-    override fun <T : Any> wrapCall( call: suspend CallAdapter.() -> T ): Any =
-        TODO("Find way to call suspend: call()" )
+    override suspend fun <T : Any> wrapCall( call: suspend CallAdapter.() -> T ): Any = this.call()
 }
