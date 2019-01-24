@@ -1,9 +1,8 @@
 package studio.forface.ermes.servicefactory
 
+import studio.forface.ermes.ErmesApi
 import studio.forface.ermes.annotations.ApiService
 import studio.forface.ermes.calladapters.CallAdapter
-import studio.forface.ermes.api.ErmesApi
-import studio.forface.ermes.converters.Converter
 import studio.forface.ermes.entities.Endpoint
 import studio.forface.ermes.entities.Url
 import studio.forface.ermes.exceptions.MissingAnnotationException
@@ -42,6 +41,9 @@ internal class ServiceFactory( ermesApi: ErmesApi, private val serviceKlass: KCl
         )
     )
 
+    /** The [ErmesApi.authenticator] */
+    val authenticator = ermesApi.authenticator
+
     /** A validated base [Url], ( with the [Endpoint] if not null ) for the calls */
     val baseUrl = ermesApi.baseUrl + apiServiceAnnotationWorker.endpoint
 
@@ -53,6 +55,9 @@ internal class ServiceFactory( ermesApi: ErmesApi, private val serviceKlass: KCl
 
     /** The [ErmesApi.client] */
     val client = ermesApi.client
+
+    /** A [String] identifier of the current Service */
+    val identifier = apiServiceAnnotationWorker.identifier
 
     /**
      * All the declared [realFunctions] of [serviceKlass]
@@ -72,15 +77,13 @@ internal class ServiceFactory( ermesApi: ErmesApi, private val serviceKlass: KCl
             .map { it to FunctionWorker( it, baseUrl ) }
             .toMap()
 
-        return makeProxy( callAdapter, converter, functionInvocationHandlers, httpCallInvoker )
+        return makeProxy( functionInvocationHandlers, httpCallInvoker )
     }
 }
 
 /** Platform dependant creation of Proxy */
 @PublishedApi
 internal expect inline fun <reified S : Any> ServiceFactory.makeProxy(
-    callAdapter: CallAdapter,
-    converter: Converter,
     functionInvocationHandlers: Map<KFunction<*>, FunctionWorker>,
     httpCallInvoker: HttpCallInvoker
 ) : S
@@ -98,5 +101,5 @@ inline fun <reified S : Any> ErmesApi.service() = object : ReadOnlyProperty<Erme
      * @see ReadOnlyProperty.getValue
      * @return [value]
      */
-    override fun getValue( thisRef: ErmesApi, property: KProperty<*>): S = value
+    override fun getValue(thisRef: ErmesApi, property: KProperty<*>): S = value
 }

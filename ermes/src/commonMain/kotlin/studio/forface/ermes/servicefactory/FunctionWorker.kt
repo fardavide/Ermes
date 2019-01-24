@@ -10,7 +10,10 @@ import studio.forface.ermes.annotations.apiParam
 import studio.forface.ermes.entities.HttpCallParams
 import studio.forface.ermes.entities.Url
 import studio.forface.ermes.exceptions.MissingAnnotationException
+import studio.forface.ermes.utils.filterNotPairWithNull
+import studio.forface.ermes.utils.forEach
 import studio.forface.ermes.utils.valueParameters
+import kotlin.coroutines.Continuation
 import kotlin.reflect.KFunction
 
 /**
@@ -53,13 +56,14 @@ internal class FunctionWorker( function: KFunction<*>, url: Url ) {
         val fields = mutableMapOf<String, String>()
         val bodies = mutableListOf<String>()
 
-        // For each arg in `args`, get the param from `params` with the same index, if both of there are NOT null, then
-        // save the given params in `fields` or `bodies` or directly append to `url`
-        args.map { it?.toString() }.forEachIndexed { index, arg ->
-            // TODO
-            val param = try { params[index] } catch ( e: IndexOutOfBoundsException ) { null }
-            if ( param != null && arg != null ) {
-
+        // For each arg in `args`, filter `Continuation` elements created by a suspend function, then map to `Pair`
+        // of param in `params` with same index as arg and arg `toString`, then filter if param or arg is null, then
+        // save the given param in `fields` or `bodies` or directly append to `url`
+        @Suppress("UNCHECKED_CAST")
+        args.filterNot { it is Continuation<*> }
+            .mapIndexed { index, arg -> params[index] to arg?.toString() }
+            .filterNotPairWithNull()
+            .forEach { param, arg ->
                 @Suppress("REDUNDANT_ELSE_IN_WHEN")
                 when ( param ) {
                     is ApiParam.Body ->     bodies += arg
@@ -69,7 +73,6 @@ internal class FunctionWorker( function: KFunction<*>, url: Url ) {
                     else -> throw NotImplementedError( "${param::class.qualifiedName} not implemented" )
                 }
             }
-        }
 
         // Check the preconditions or throw exception
         preconditions( functionName, method, bodies.size, fields.isNotEmpty() )

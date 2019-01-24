@@ -1,8 +1,10 @@
 package studio.forface.ermes.servicefactory
 
 import io.ktor.client.HttpClient
+import io.ktor.client.request.header
 import io.ktor.client.request.request
 import io.ktor.client.request.url
+import io.ktor.http.headersOf
 import studio.forface.ermes.entities.HttpCallParams
 
 /**
@@ -17,6 +19,7 @@ internal class HttpCallInvoker( val client: HttpClient ) {
         return client.request {
             method = params.httpMethod
             url( params.url.toString() )
+            params.headers.forEach { header( it.first, it.second ) }
             params.body?.let { body = it }
         }
     }

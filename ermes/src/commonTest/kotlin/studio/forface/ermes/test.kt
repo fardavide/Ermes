@@ -2,7 +2,6 @@ package studio.forface.ermes
 
 import kotlinx.coroutines.Deferred
 import studio.forface.ermes.annotations.ApiService
-import studio.forface.ermes.api.ErmesApi
 import studio.forface.ermes.servicefactory.service
 
 val testApi = TestApi()

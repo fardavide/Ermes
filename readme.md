@@ -1,8 +1,8 @@
-## Basic example
+###### Actually only the JVM implementation is working, a better solution is needed for *native* and *JS* for avoid code generation
 
 
 
-#### Setup:
+## Setup:
 
 ```kotlin
 @Serializable
@@ -18,7 +18,7 @@ val url = "https://jsonplaceholder.typicode.com"
 ###### With Suspend function:
 
 ```kotlin
-@ApiService( /* endpoint = optionaEndpoint */ )
+@ApiService( /* endpoint = optionalEndpoint, identifier = optionalIdentifier */ )
 interface SampleService {
     @Get( "posts" )
     suspend fun posts( @Query( "userId" ) userId: Int ): List<Post>
@@ -28,7 +28,7 @@ interface SampleService {
 ###### With Deferred:
 
 ```kotlin
-@ApiService( /* endpoint = optionaEndpoint */ )
+@ApiService( /* endpoint = optionalEndpoint, identifier = optionalIdentifier */ )
 interface SampleService {
     @Get( "posts" )
     fun posts( @Query( "userId" ) userId: Int ): Deferred<List<Post>>
@@ -37,7 +37,7 @@ interface SampleService {
 
 
 
-#### Api creation:
+## Api creation:
 
 *For use suspend functions, declare* `callAdapter = SuspendCallAdapter` *via DSL or override `override val callAdapter = SuspendCallAdapter`*
 
@@ -103,3 +103,45 @@ val api4 = ErmesApi {
 
 println( api<SampleService>.posts( userId = 1 ).await() )
 ```
+
+
+
+## Authenticator:
+
+*For use **Authenticator** use `authenticator { serviceIdentifier -> }` or assing it explicitally with `authentificator = myIdentificator`*
+
+
+
+##### Usage Example #1
+
+###### Explicit declaration via implementation of Authenticator
+
+```kotlin
+class MyAuthenticator: Authenticator() {
+    override fun invoke( url: Url, serviceIdentifier: String ): AuthenticationParams {
+        return if ( serviceIdentifier == "myOAuthService" ) 
+            AuthenticationParams( url, "Authorization" to "Bearer $someToken" )
+        else super.invoke( url, serviceIdentifier )
+    }
+}
+
+val api = ErmesApi( url ) {
+    authenticator = MyAuthenticator()
+}
+```
+
+
+
+##### Usage Example #2
+
+###### Implicit declaration via DSL
+
+```kotlin
+val api = ErmesApi( url ) {
+    authenticator { serviceIdentifier ->
+        if ( serviceIdentifier == "myOAuthService" ) 
+            headers += "Authorization" to "Bearer $someToken"
+    }
+}
+```
+

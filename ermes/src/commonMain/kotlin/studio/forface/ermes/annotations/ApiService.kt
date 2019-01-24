@@ -8,4 +8,4 @@ import studio.forface.ermes.utils.EMPTY_STRING
  */
 @Target(AnnotationTarget.CLASS)
 @Retention(AnnotationRetention.RUNTIME)
-annotation class ApiService( val endpoint: String = EMPTY_STRING )
+annotation class ApiService( val endpoint: String = EMPTY_STRING, val identifier: String = EMPTY_STRING )

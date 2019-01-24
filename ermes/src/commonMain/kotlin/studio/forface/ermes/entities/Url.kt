@@ -11,8 +11,7 @@ import studio.forface.ermes.utils.set
  * @author Davide Giuseppe Farella.
  * A custom lightweight class for an Url.
  */
-@PublishedApi
-internal data class Url(
+data class Url internal constructor(
     private val base: String,
     private var endpoint: Endpoint? = null,
     private val queries: MutableMap<String, String> = mutableMapOf(),
@@ -20,50 +19,49 @@ internal data class Url(
 
 ) {
     /** @return a new [Url] with the given [Endpoint] */
-    operator fun plus( endpoint: Endpoint? ) = copy( endpoint = endpoint )
+    internal operator fun plus( endpoint: Endpoint? ) = copy( endpoint = endpoint )
 
     /** Set the given [Endpoint] to [Url.endpoint] */
-    operator fun plusAssign( endpoint: Endpoint? ) {
+    internal operator fun plusAssign( endpoint: Endpoint? ) {
         this.endpoint = endpoint
     }
 
     /** @return a new [Url] with the given [UrlPath] */
-    operator fun plus( path: UrlPath ) = copy().apply copy@ { this@copy += path }
+    internal operator fun plus( path: UrlPath ) = copy().apply copy@ { this@copy += path }
 
     /** Add the given [UrlPath] to [Url.paths] */
-    operator fun plusAssign( path: UrlPath ) {
+    internal operator fun plusAssign( path: UrlPath ) {
         this.paths.add( path )
     }
 
     /** @return a new [Url] with the given [String] *path* */
-    operator fun plus( path: String ) = copy().apply copy@ { this@copy += path }
+    internal operator fun plus( path: String ) = copy().apply copy@ { this@copy += path }
 
     /** Add the given [String] to [Url.paths] */
-    operator fun plusAssign( path: String ) {
+    internal operator fun plusAssign( path: String ) {
         this.paths.add( UrlPath( path ) )
     }
 
     /** @return a new [Url] with the given [UrlQuery] */
-    operator fun plus( query: UrlQuery ) = copy().apply copy@ { this@copy += query }
+    internal operator fun plus( query: UrlQuery ) = copy().apply copy@ { this@copy += query }
 
     /** Add the given [UrlQuery] to [Url.queries] */
-    operator fun plusAssign( query: UrlQuery ) {
+    internal operator fun plusAssign( query: UrlQuery ) {
         this.queries[query.first] = query.second
     }
 
     /** Replace with the given [old] [UrlPath] with a [new] [UrlPath] in [Url.paths] */
-    operator fun set( old: UrlPath, new: UrlPath ) {
+    internal operator fun set( old: UrlPath, new: UrlPath ) {
         this.paths[old] = new
     }
 
     /** Replace with the given [oldPath] [String] *path* with a [newPath] [String] *path* in [Url.paths] */
-    operator fun set( oldPath: String, newPath: String ) {
+    internal operator fun set( oldPath: String, newPath: String ) {
         this.paths[UrlPath( oldPath )] = UrlPath( newPath )
     }
 
-    /** @return a valid [String] url with the available params */
+    /** @return a [String] url with the available params */
     override fun toString(): String {
-        validateOrThrow()
         return StringBuilder( base )
             .appendIfNotNull( endpoint, prefix = "/" )
             .appendIfNotEmpty( paths, prefix = "/", separator = "/" )

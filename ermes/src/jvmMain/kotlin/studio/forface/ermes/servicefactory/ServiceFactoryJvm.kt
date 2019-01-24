@@ -5,6 +5,7 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.runBlocking
 import kotlinx.serialization.KSerializer
 import kotlinx.serialization.serializerByTypeToken
+import studio.forface.ermes.authenticator.Authenticator
 import studio.forface.ermes.calladapters.CallAdapter
 import studio.forface.ermes.converters.Converter
 import java.lang.reflect.Proxy
@@ -16,8 +17,6 @@ import kotlin.reflect.jvm.kotlinFunction
 /** Platform dependant creation of Proxy */
 @PublishedApi
 internal actual inline fun <reified S : Any> ServiceFactory.makeProxy(
-    callAdapter: CallAdapter,
-    converter: Converter,
     functionInvocationHandlers: Map<KFunction<*>, FunctionWorker>,
     httpCallInvoker: HttpCallInvoker
 ): S {
@@ -31,11 +30,12 @@ internal actual inline fun <reified S : Any> ServiceFactory.makeProxy(
 
         runBlocking {
             callAdapter.wrapCall {
-                val httpParams = functionWorker(args)
-                val result = httpCallInvoker<HttpResponse>(httpParams)
+                val baseParams = functionWorker( args )
+                val authenticatedParams = authenticator( baseParams, identifier )
+                val result = httpCallInvoker<HttpResponse>( authenticatedParams )
 
                 val returnType = kFunction.unwrapReturnType()
-                converter(result, returnType)
+                converter( result, returnType )
             }
         }
     } as S

@@ -1,6 +1,6 @@
 package studio.forface.ermes.servicefactory
 
-import studio.forface.ermes.api.ErmesApi
+import studio.forface.ermes.ErmesApi
 import kotlin.reflect.KClass
 
 /**
@@ -22,7 +22,7 @@ internal class ServiceInstancesManager(
 internal class InstanceCreator {
 
     /** @return a new instance of [S], created via [ServiceFactory] */
-    inline operator fun <reified S : Any> invoke( ermesApi: ErmesApi ) : S =
+    inline operator fun <reified S : Any> invoke( ermesApi: ErmesApi) : S =
         ServiceFactory( ermesApi, S::class )()
 }
 

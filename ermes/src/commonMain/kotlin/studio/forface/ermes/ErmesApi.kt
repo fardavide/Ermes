@@ -1,11 +1,14 @@
 @file:Suppress("FunctionName", "MemberVisibilityCanBePrivate")
 
-package studio.forface.ermes.api
+package studio.forface.ermes
 
 import io.ktor.client.HttpClient
 import io.ktor.client.HttpClientConfig
 import io.ktor.client.engine.HttpClientEngineConfig
 import io.ktor.client.engine.HttpClientEngineFactory
+import studio.forface.ermes.authenticator.AuthenticationParamsBuilder
+import studio.forface.ermes.authenticator.Authenticator
+import studio.forface.ermes.authenticator.DefaultAuthenticator
 import studio.forface.ermes.calladapters.CallAdapter
 import studio.forface.ermes.calladapters.DeferredCallAdapter
 import studio.forface.ermes.converters.Converter
@@ -23,6 +26,9 @@ import studio.forface.ermes.utils.EMPTY_STRING
  * @see Url.validateOrThrow
  */
 open class ErmesApi(
+
+    /** The [Authenticator] for authenticate http calls */
+    open val authenticator: Authenticator = DefaultAuthenticator,
 
     /** The [String] representation of the base url */
     baseUrl: String,
@@ -61,6 +67,9 @@ fun ErmesApi( baseUrl: String = EMPTY_STRING, block: ErmesApiBuilder.() -> Unit 
 /** A Builder for create [ErmesApi] via DSL */
 class ErmesApiBuilder internal constructor( /** @see ErmesApi.baseUrl */ var baseUrl: String ) {
 
+    /** @see ErmesApi.authenticator */
+    var authenticator: Authenticator = DefaultAuthenticator
+
     /** @see ErmesApi.callAdapter */
     var callAdapter: CallAdapter = DeferredCallAdapter
 
@@ -72,6 +81,11 @@ class ErmesApiBuilder internal constructor( /** @see ErmesApi.baseUrl */ var bas
 
     /** @see ErmesApi.logging */
     var logging = false
+
+    /** A function for set [authenticator] though DSL style */
+    fun authenticator( builder: AuthenticationParamsBuilder ) {
+        authenticator = Authenticator( builder )
+    }
 
     /** A function for set [client] through [HttpClient] APIs */
     fun client( block: HttpClientConfig<*>.() -> Unit ) {
@@ -88,6 +102,7 @@ class ErmesApiBuilder internal constructor( /** @see ErmesApi.baseUrl */ var bas
 
     /** Create an instance of [ErmesApi] */
     fun build() = ErmesApi(
+        authenticator = authenticator,
         baseUrl =       baseUrl,
         callAdapter =   callAdapter,
         converter =     converter,
