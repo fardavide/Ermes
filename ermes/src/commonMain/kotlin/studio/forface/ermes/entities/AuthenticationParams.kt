@@ -2,7 +2,7 @@ package studio.forface.ermes.entities
 
 /**
  * @author Davide Giuseppe Farella
- * An entity containing param for authentication and that offer extra functions for set that params
+ * An entity containing param for authentication
  */
 data class AuthenticationParams(
     val url: Url,

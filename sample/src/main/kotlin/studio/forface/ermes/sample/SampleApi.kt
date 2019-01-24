@@ -22,23 +22,11 @@ interface SampleService {
 data class Post( val userId: Int, val id: Int, val title: String, val body: String )
 
 suspend fun main() = runBlocking {
-    val url = "https://jsonplaceholder.typicode.com"
-    val api = ErmesApi( url ) {
+    val baseUrl = "https://jsonplaceholder.typicode.com"
+    val api = ErmesApi( baseUrl ) {
         callAdapter = SuspendCallAdapter
-        authenticator {
-            if ( serviceIdentifier == "myOAuthService" )
-                headers += "Authorization" to "Bearer $someToken"
-        }
     }
 
     val result = api<SampleService>().posts( userId = 1 )
     println( result )
-}
-
-class MyAuth: Authenticator() {
-    override fun invoke( url: Url, serviceIdentifier: String) : AuthenticationParams {
-        return if ( serviceIdentifier == "myOAuthService" )
-            AuthenticationParams( url,"Authorization" to "Bearer $someToken" )
-        else super.invoke( url, serviceIdentifier )
-    }
 }

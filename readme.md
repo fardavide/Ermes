@@ -8,7 +8,7 @@
 @Serializable
 data class Post( val userId: Int, val id: Int, val title: String, val body: String )
 
-val url = "https://jsonplaceholder.typicode.com"
+val baseUrl = "https://jsonplaceholder.typicode.com"
 ```
 
 
@@ -67,7 +67,7 @@ println( api.sampleService.posts( userId = 1 ) )
 ###### Implicit Service declaration via an instantiation of ErmesApi through default constructor
 
 ```kotlin
-val api = ErmesApi( url, logging = false )
+val api = ErmesApi( baseUrl, logging = false )
 
 println( api<SampleService>.posts( userId = 1 ).await() )
 ```
@@ -79,7 +79,7 @@ println( api<SampleService>.posts( userId = 1 ).await() )
 ###### Implicit Service declaration via an instantiation of ErmesApi through DSL
 
 ```kotlin
-val api = ErmesApi( url ) {
+val api = ErmesApi( baseUrl ) {
     logging = false
     callAdapter = SuspendCallAdapter
 }
@@ -95,7 +95,7 @@ println( api<SampleService>.posts( userId = 1 ) )
 
 ```kotlin
 val api4 = ErmesApi {
-    baseUrl = url
+    this.baseUrl = baseUrl
     logging = false
     client { expectSuccess = false }
     // Default value: callAdapter = DeferredCallAdapter
@@ -119,13 +119,17 @@ println( api<SampleService>.posts( userId = 1 ).await() )
 ```kotlin
 class MyAuthenticator: Authenticator() {
     override fun invoke( url: Url, serviceIdentifier: String ): AuthenticationParams {
-        return if ( serviceIdentifier == "myOAuthService" ) 
-            AuthenticationParams( url, "Authorization" to "Bearer $someToken" )
-        else super.invoke( url, serviceIdentifier )
+        return when( serviceIdentifier ) {
+            "myServiceV3" ->
+            	AuthenticationParams( url + ( "sessionId" to someSessionId ) )
+            "myServiceV4" -> 
+            	AuthenticationParams( url, "Authorization" to "Bearer $someToken" )
+        	else -> super.invoke( url, serviceIdentifier )
+        }
     }
 }
 
-val api = ErmesApi( url ) {
+val api = ErmesApi( baseUrl ) {
     authenticator = MyAuthenticator()
 }
 ```
@@ -137,10 +141,12 @@ val api = ErmesApi( url ) {
 ###### Implicit declaration via DSL
 
 ```kotlin
-val api = ErmesApi( url ) {
+val api = ErmesApi( baseUrl ) {
     authenticator { serviceIdentifier ->
-        if ( serviceIdentifier == "myOAuthService" ) 
-            headers += "Authorization" to "Bearer $someToken"
+    	when ( serviceIdentifier ) {
+            "myServiceV3" -> url += "sessionId" to someSessionId
+			"myServiceV4" -> headers += "Authorization" to "Bearer $someToken"
+        }
     }
 }
 ```

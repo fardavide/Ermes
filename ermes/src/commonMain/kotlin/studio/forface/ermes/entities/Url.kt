@@ -43,10 +43,10 @@ data class Url internal constructor(
     }
 
     /** @return a new [Url] with the given [UrlQuery] */
-    internal operator fun plus( query: UrlQuery ) = copy().apply copy@ { this@copy += query }
+    operator fun plus( query: UrlQuery ) = copy().apply copy@ { this@copy += query }
 
     /** Add the given [UrlQuery] to [Url.queries] */
-    internal operator fun plusAssign( query: UrlQuery ) {
+    operator fun plusAssign( query: UrlQuery ) {
         this.queries[query.first] = query.second
     }
 
@@ -105,4 +105,4 @@ internal inline class UrlPath( private val s: String ) {
 }
 
 /** A typealias for a [Pair] of [String]s UrlQuery */
-internal typealias UrlQuery = Pair<String, String>
+typealias UrlQuery = Pair<String, String>
