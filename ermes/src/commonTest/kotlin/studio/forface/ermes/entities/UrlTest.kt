@@ -3,7 +3,9 @@
 package studio.forface.ermes.entities
 
 import studio.forface.ermes.exceptions.InvalidUrlException
-import kotlin.test.*
+import kotlin.test.Test
+import kotlin.test.assertEquals
+import kotlin.test.assertFailsWith
 
 /**
  * @author Davide Giuseppe Farella.

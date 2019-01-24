@@ -4,7 +4,6 @@ import io.ktor.client.HttpClient
 import io.ktor.client.request.header
 import io.ktor.client.request.request
 import io.ktor.client.request.url
-import io.ktor.http.headersOf
 import studio.forface.ermes.entities.HttpCallParams
 
 /**

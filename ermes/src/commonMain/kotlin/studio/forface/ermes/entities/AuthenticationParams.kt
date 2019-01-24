@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package studio.forface.ermes.entities
 
 /**

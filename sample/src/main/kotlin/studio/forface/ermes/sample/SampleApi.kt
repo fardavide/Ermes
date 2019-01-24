@@ -6,10 +6,7 @@ import studio.forface.ermes.ErmesApi
 import studio.forface.ermes.annotations.ApiService
 import studio.forface.ermes.annotations.Get
 import studio.forface.ermes.annotations.Query
-import studio.forface.ermes.authenticator.Authenticator
 import studio.forface.ermes.calladapters.SuspendCallAdapter
-import studio.forface.ermes.entities.AuthenticationParams
-import studio.forface.ermes.entities.Url
 
 
 @ApiService

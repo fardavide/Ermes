@@ -1,13 +1,9 @@
 package studio.forface.ermes.servicefactory
 
 import io.ktor.client.response.HttpResponse
-import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.runBlocking
 import kotlinx.serialization.KSerializer
 import kotlinx.serialization.serializerByTypeToken
-import studio.forface.ermes.authenticator.Authenticator
-import studio.forface.ermes.calladapters.CallAdapter
-import studio.forface.ermes.converters.Converter
 import java.lang.reflect.Proxy
 import java.lang.reflect.Type
 import kotlin.collections.set

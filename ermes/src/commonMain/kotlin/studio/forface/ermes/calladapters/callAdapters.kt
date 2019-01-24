@@ -3,12 +3,10 @@ package studio.forface.ermes.calladapters
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.async
-import kotlinx.coroutines.launch
 import studio.forface.ermes.exceptions.RequireDeferredException
 import studio.forface.ermes.exceptions.RequireSuspendException
 import kotlin.reflect.KFunction
 import kotlin.reflect.KType
-import kotlin.reflect.KTypeParameter
 
 /**
  * @author Davide Giuseppe Farella.

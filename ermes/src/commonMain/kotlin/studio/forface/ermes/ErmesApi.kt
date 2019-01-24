@@ -27,11 +27,11 @@ import studio.forface.ermes.utils.EMPTY_STRING
  */
 open class ErmesApi(
 
-    /** The [Authenticator] for authenticate http calls */
-    open val authenticator: Authenticator = DefaultAuthenticator,
-
     /** The [String] representation of the base url */
     baseUrl: String,
+
+    /** The [Authenticator] for authenticate http calls */
+    open val authenticator: Authenticator = DefaultAuthenticator,
 
     /** The [CallAdapter] for adapt http calls */
     open val callAdapter: CallAdapter = DeferredCallAdapter,
