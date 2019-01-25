@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="studio.forface.ermes.buildSrc.main" target="1.8" />
+      <module name="studio.forface.ermes.buildSrc.test" target="1.8" />
+      <module name="studio.forface.ermes.ermes.jvmMain" target="1.6" />
+      <module name="studio.forface.ermes.ermes.jvmTest" target="1.6" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

@@ -1,6 +1,5 @@
 package studio.forface.ermes.sample
 
-import kotlinx.coroutines.runBlocking
 import kotlinx.serialization.Serializable
 import studio.forface.ermes.ErmesApi
 import studio.forface.ermes.annotations.ApiService
@@ -18,12 +17,12 @@ interface SampleService {
 @Serializable
 data class Post( val userId: Int, val id: Int, val title: String, val body: String )
 
-suspend fun main() = runBlocking {
+suspend fun main() {
     val baseUrl = "https://jsonplaceholder.typicode.com"
     val api = ErmesApi( baseUrl ) {
         callAdapter = SuspendCallAdapter
     }
 
-    val result = api<SampleService>().posts( userId = 1 )
+    val result = api<SampleService>().posts( userId = 2 )
     println( result )
 }

@@ -7,7 +7,7 @@ import io.ktor.client.response.readBytes
 import io.ktor.client.response.readText
 import kotlinx.serialization.*
 import kotlinx.serialization.context.getOrDefault
-import kotlinx.serialization.json.JSON
+import kotlinx.serialization.json.Json
 import kotlin.reflect.KClass
 import kotlin.reflect.KType
 
@@ -24,16 +24,16 @@ interface Converter {
 /** A [Converter] that works with Kotlinx Serialization */
 object KotlinSerializationConverter : Converter {
 
-    /** @return [Any] created by converting [HttpResponse] to the given [KType], with [JSON] */
+    /** @return [Any] created by converting [HttpResponse] to the given [KType], with [Json] */
     @ImplicitReflectionSerializer
     override suspend operator fun invoke( response: HttpResponse, kType: KType ) : Any {
         return when( kType.classifier as KClass<*> ) {
             HttpResponse::class -> response
             ByteArray::class -> response.readBytes()
             String::class -> response.readText()
-            List::class -> JSON.parseList( kType, response.readText() )
-            Map::class -> JSON.parseMap( kType, response.readText() )
-            else -> JSON.parse( kType, response.readText() )
+            List::class -> Json.parseList( kType, response.readText() )
+            Map::class -> Json.parseMap( kType, response.readText() )
+            else -> Json.parse( kType, response.readText() )
         }
     }
 

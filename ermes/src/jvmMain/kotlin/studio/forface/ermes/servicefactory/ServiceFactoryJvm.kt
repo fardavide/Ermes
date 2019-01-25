@@ -22,7 +22,7 @@ internal actual inline fun <reified S : Any> ServiceFactory.makeProxy(
     ) { _, method, args ->
 
         val kFunction = method.kotlinFunction!!
-        val functionWorker = functionInvocationHandlers[kFunction]!!
+        val functionWorker = functionInvocationHandlers.getValue( kFunction )
 
         runBlocking {
             callAdapter.wrapCall {
@@ -35,19 +35,4 @@ internal actual inline fun <reified S : Any> ServiceFactory.makeProxy(
             }
         }
     } as S
-}
-
-// TODO temporary implementation
-@PublishedApi
-internal object KSerializersCache {
-
-    private val strategies = mutableMapOf<Type, KSerializer<Any>>()
-
-    operator fun invoke( type: Type ) : KSerializer<Any> {
-        return strategies[type] ?: kotlin.run {
-            val strategy = serializerByTypeToken( type )
-            strategies[type] = strategy
-            strategy
-        }
-    }
 }

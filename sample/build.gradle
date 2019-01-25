@@ -12,8 +12,8 @@ configurations {
 }
 
 dependencies {
-    implementation Libs.kotlin_jdk8
-    implementation Libs.coroutines_jdk8
-    implementation Libs.serialization_jdk
+    implementation Libs.kotlin
+    implementation Libs.coroutines
+    implementation Libs.serialization
     implementation project(":ermes")
 }

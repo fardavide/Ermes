@@ -1,69 +1,5 @@
 buildscript {
-    ext.buildVersion = [
-        major  : 1,
-        minor  : 0,
-        channel: 0, // 0: build, 1: alpha, 2: beta, 3: RC, 4: stable
-        patch  : 0,
-        build  : 1
-    ]
-
-    ext.getVersionName = {
-        def baseName = "${buildVersion.major}.${buildVersion.minor}"
-        def suffixName = getSuffixVersionName()
-
-        return "${baseName}${suffixName}"
-    }
-
-    ext.getSuffixVersionName = {
-        def ch = buildVersion.channel
-        if (buildVersion.build > 0 || ch == 0) return getVersionBuildName()
-
-        def vChannel = ""
-        if (ch == 1) vChannel = "-alpha"
-        else if (ch == 2) vChannel = "-beta"
-        else if (ch == 3) vChannel = "-RC"
-        //else if ( ch == 4 ) vChannel = "" // stable
-
-        def pt = buildVersion.patch
-        if (pt > 0) vChannel = "${vChannel}-${pt}"
-
-        return vChannel
-    }
-
-    ext.getVersionBuildName = {
-        def vBuild = ""
-        def bv = buildVersion.build
-
-        if (bv > 0) {
-            vBuild = "-build${buildVersion.channel}${buildVersion.patch}${bv}"
-
-            def ch = buildVersion.channel
-            if (ch == 3)
-                throw IllegalArgumentException("build is ${bv}, but channel is ${ch} ( stable )")
-        }
-
-        return vBuild
-    }
-
-    ext.getVersionCode = {
-        // pattern:
-        // major minor channel patch build
-        // 00    00    0      00     00
-
-        def build = buildVersion.build * 01
-        def patch = buildVersion.patch * 01_00
-        def channel = buildVersion.channel * 1_00_00
-        def minor = buildVersion.minor * 01_0_00_00
-        def major = buildVersion.major * 01_00_0_00_00
-
-        return major + minor + patch + channel + build
-    }
-
-    ext.versions = [
-        versionName: getVersionName(),
-        versionCode: getVersionCode()
-    ]
-
+    
     ext.repos = {
         jcenter()
         mavenCentral()
@@ -75,8 +11,14 @@ buildscript {
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$Versions.kotlin"
         classpath "org.jetbrains.kotlin:kotlin-serialization:$Versions.kotlin"
+        
+        classpath 'org.jetbrains.dokka:dokka-gradle-plugin:0.9.17'
     }
 }
+
+// task wrapper(type: Wrapper) {
+//     gradleVersion = '5.1.1' // version required
+// }
 
 subprojects {
     if (project.name.contains("native")) return

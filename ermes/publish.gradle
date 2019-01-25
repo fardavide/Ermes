@@ -1,0 +1,80 @@
+group project.group
+version project.version
+apply plugin: 'maven-publish'
+
+Properties gradleProps= new Properties()
+gradleProps.load(project.rootProject.file('gradle.properties').newDataInputStream())
+
+def pomBaseData = {
+    licenses {
+        license {
+            name gradleProps.getProperty("project.license.name")
+            url gradleProps.getProperty("project.license.url")
+        }
+    }
+    scm {
+        url gradleProps.getProperty("project.url")
+    }
+}
+
+def generatePom = { pom ->
+    pom.withXml {
+        def root = it.asNode()
+        root.appendNode('name', gradleProps.getProperty("project.name"))
+        root.appendNode('description', gradleProps.getProperty("project.description"))
+        root.appendNode('url', gradleProps.getProperty("project.url"))
+        root.children().last() + pomBaseData
+    }
+}
+
+ext.generatePom = generatePom
+
+def publishUser = rootProject.findProperty('BINTRAY_USER') ?: project.findProperty('bintrayUser') ?: System.getenv('BINTRAY_USER')
+def publishPassword = rootProject.findProperty('BINTRAY_KEY') ?: project.findProperty('bintrayApiKey') ?: System.getenv('BINTRAY_API_KEY')
+
+if (publishUser && publishPassword) {
+    publishing {
+        repositories {
+            maven {
+                credentials {
+                    username publishUser
+                    password publishPassword
+                }
+                url "https://api.bintray.com/maven/4face/4face/${gradleProps.getProperty('project.package')}/"
+            }
+        }
+
+        configure(publications) {
+            generatePom(pom)
+        }
+    }
+}
+
+if (project.file('build.project.gradle').exists()) {
+    apply from: project.file('build.project.gradle')
+}
+
+// Properties localProps = new Properties()
+// localProps.load(project.rootProject.file('local.properties').newDataInputStream())
+// 
+// bintray {
+//     user = localProps.getProperty("bintray.user")
+//     key = localProps.getProperty("bintray.apikey")
+// 
+//     configurations = ['archives']
+//     pkg {
+//         repo = gradleProps.getProperty("project.name")
+//         name = gradleProps.getProperty("project.package")
+//         desc = gradleProps.getProperty("project.description")
+//         websiteUrl = gradleProps.getProperty("developer.url")
+//         vcsUrl = gradleProps.getProperty("project.url")
+//         licenses = ['Apache-2.0']
+//         dryRun = false
+//         publish = true
+//         override = false
+//         publicDownloadNumbers = true
+//         version {
+//             desc = gradleProps.getProperty("project.description")
+//         }
+//     }
+// }
